@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { WorkerSignupComponent } from './worker-signup/worker-signup.component';
 import { WorkerLoginComponent } from './worker-login/worker-login.component';
 
+import { WorkerService } from './worker.service'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,9 @@ import { WorkerLoginComponent } from './worker-login/worker-login.component';
     BrowserModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [
+    WorkerService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
