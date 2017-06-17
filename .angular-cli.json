@@ -52,6 +52,24 @@
   },
   "defaults": {
     "styleExt": "css",
-    "component": {}
-  }
+    "component": {},
+    "spec": {
+      "component": false
+    }
+  },
+  "defaults": {
+      "styleExt": "css",
+      "prefixInterfaces": false,
+      "inline": {
+        "style": true
+      },
+      "spec": {
+        "class": false,
+        "component": false,
+        "directive": true,
+        "module": false,
+        "pipe": true,
+        "service": false
+      }
+    }
 }
