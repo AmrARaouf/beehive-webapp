@@ -5,11 +5,13 @@ import { RouterModule } from '@angular/router';
 import { ROUTES } from './routes'
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { WorkerSignupComponent } from './worker-signup/worker-signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    WorkerSignupComponent
   ],
   imports: [
     BrowserModule,
