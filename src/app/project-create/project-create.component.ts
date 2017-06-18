@@ -32,8 +32,6 @@ export class ProjectCreateComponent  {
       this.project.package = "5946b1491218e35774c7c754";
     else if (this.project.package == "Gold")
       this.project.package = "5946b1581218e35774c7c755";
-    else if (this.project.package == "Diamond")
-      this.project.package = "5946b1581218e35774c7c756";
     else 
       this.project.package = "5946b12d1218e35774c7c753";
     this.projectService.create(this.project);
