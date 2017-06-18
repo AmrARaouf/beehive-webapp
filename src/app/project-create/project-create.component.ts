@@ -1,6 +1,8 @@
-import { Component, Input } from '@angular/core';
- import { Project } from './project'
+import { Component, OnInit, Input } from '@angular/core';
+import { Router }            from '@angular/router';
 
+import { Project } from './project';
+import { ProjectService } from './project.service';
 
 @Component({
   selector: 'app-project-create',
@@ -8,7 +10,11 @@ import { Component, Input } from '@angular/core';
   styles: []
 })
 
-export class ProjectCreateComponent {
+export class ProjectCreateComponent {  
+  // constructor(
+  //   private projectService: ProjectService,
+  //   private router: Router) { }
+
   title = 'Add Project';
   project: Project = {
     name: '',
@@ -17,7 +23,10 @@ export class ProjectCreateComponent {
     pakage_name: ''
   };
 
-    onAdd(): void {
-    // TODO: save project on server,
+  onAdd(): void {
+    //if (this.projectService == null)
+      this.project.name += "a"; 
+    //else
+      //this.projectService.create(this.project);
   }
 }

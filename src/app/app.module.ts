@@ -11,6 +11,7 @@ import { WorkerLoginComponent } from './worker-login/worker-login.component';
 import { ProjectCreateComponent } from './project-create/project-create.component';
 
 import { WorkerService } from './worker.service'
+import { ProjectService } from './project-create/project.service'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { WorkerService } from './worker.service'
     FormsModule
   ],
   providers: [
-    WorkerService
+    WorkerService,
+    ProjectService
   ],
   bootstrap: [AppComponent]
 })
