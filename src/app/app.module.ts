@@ -10,7 +10,8 @@ import { WorkerSignupComponent } from './worker-signup/worker-signup.component';
 import { WorkerLoginComponent } from './worker-login/worker-login.component';
 import { ProjectCreateComponent } from './project-create/project-create.component';
 
-import { WorkerService } from './worker.service'
+import { WorkerService } from './worker.service';
+import { BusinessSignupComponent } from './business-signup/business-signup.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { WorkerService } from './worker.service'
     HomeComponent,
     WorkerSignupComponent,
     WorkerLoginComponent,
-    ProjectCreateComponent
+    ProjectCreateComponent,
+    BusinessSignupComponent
   ],
   imports: [
     BrowserModule,
