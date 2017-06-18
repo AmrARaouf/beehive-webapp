@@ -1,0 +1,18 @@
+<p>{{title}}</p>
+  <div>
+    <label>Name: </label>
+    <input [(ngModel)]="project.name">
+  </div>
+  <div>
+    <label>Description: </label>
+    <input [(ngModel)]="project.description"/>
+  </div>
+  <div>
+    <label>Label Names: </label>
+    <input [(ngModel)]="project.label_names"/>
+  </div>
+  <div>
+    <label>Package Type: </label>
+    <input [(ngModel)]="project.pakage_name"/>
+  </div>
+  <button (click)="onAdd()"> Add </button>
