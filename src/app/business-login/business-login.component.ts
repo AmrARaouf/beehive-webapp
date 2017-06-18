@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusinessLoginComponent {
 
+  user = {
+    email: '',
+    password: ''
+  }
+
   login() {
     // auth
     console.log("hello");
