@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { HttpModule }    from '@angular/http';
 
 import { ROUTES } from './routes'
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { WorkerService } from './worker.service'
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [
