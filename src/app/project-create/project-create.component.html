@@ -1,7 +1,17 @@
-<div>
-  <p>Add Project </p>
-  <label>Name: </label> {{project.name}}
-  <label>Description: </label>{{project.description}}
-  <label>Label Names: </label>{{project.label_names}}
-  <label>Package Type: </label>{{project.pakage_name}}
-</div>
+<p>{{title}}</p>
+  <div>
+    <label>Name: </label>
+    <input [(ngModel)]="project.name">
+  </div>
+  <div>
+    <label>Description: </label>
+    <input [(ngModel)]="project.description"/>
+  </div>
+  <div>
+    <label>Label Names: </label>
+    <input [(ngModel)]="project.label_names"/>
+  </div>
+  <div>
+    <label>Package Type: </label>
+    <input [(ngModel)]="project.pakage_name"/>
+  </div>
