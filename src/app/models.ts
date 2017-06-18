@@ -2,7 +2,7 @@ export class Project {
   name: string;
   description: string;
   label_names: string;
-  pakage_name: string;
+  package_type: string;
 }
 
 export class BusinessUser {
@@ -10,5 +10,6 @@ export class BusinessUser {
   organization: string;
   email: string;
   phone: string;
+  password: string;
   message: string;
 }

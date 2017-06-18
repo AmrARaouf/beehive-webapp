@@ -12,6 +12,7 @@ export class BusinessSignupComponent {
     organization: '',
     email: '',
     phone: '',
+    password: '',
     message: ''
   };
 

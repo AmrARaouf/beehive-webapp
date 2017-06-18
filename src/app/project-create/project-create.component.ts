@@ -20,12 +20,22 @@ export class ProjectCreateComponent  {
     name: '',
     description: '',
     label_names: '',
-    pakage_name: ''
+    package_type: '',
   };
   // ngOnInit(): void {
     
   // }
   onAdd(): void {
-          this.projectService.create(this.project);
+    if (this.project.package_type == "Bronze")
+      this.project.package_type = "5946b1401218e35774c7c753";
+    else if (this.project.package_type == "Silver")
+      this.project.package_type = "5946b1491218e35774c7c754";
+    else if (this.project.package_type == "Gold")
+      this.project.package_type = "5946b1581218e35774c7c755";
+    else if (this.project.package_type == "Diamond")
+      this.project.package_type = "5946b1581218e35774c7c756";
+    else 
+      this.project.package_type = "5946b12d1218e35774c7c753";
+    this.projectService.create(this.project);
   }
 }
