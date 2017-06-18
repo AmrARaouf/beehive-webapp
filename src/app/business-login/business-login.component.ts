@@ -9,6 +9,7 @@ export class BusinessLoginComponent {
 
   login() {
     // auth
+    console.log("hello");
   }
 
 }
