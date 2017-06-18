@@ -1,18 +1,33 @@
-<p>{{title}}</p>
-  <div>
-    <label>Name: </label>
-    <input [(ngModel)]="project.name">
-  </div>
-  <div>
-    <label>Description: </label>
-    <input [(ngModel)]="project.description"/>
-  </div>
-  <div>
-    <label>Label Names: </label>
-    <input [(ngModel)]="project.label_names"/>
-  </div>
-  <div>
-    <label>Package Type: </label>
-    <input [(ngModel)]="project.pakage_type" placeholder="Bronze / Silver / Gold / Diamond"/>
-  </div>
-  <button (click)="onAdd()"> Add </button>
+<h2>{{title}}</h2>
+<div>
+  <label>Name: </label>
+  <input [(ngModel)]="project.name">
+</div>
+<div>
+  <label>Description: </label>
+  <input [(ngModel)]="project.description" />
+</div>
+<div>
+  <label>Package: </label><br/>
+  <label>
+    <input type="radio" ng-model="project.package" value="free">
+    Free (0.5 GB)
+  </label><br/>
+  <label>
+    <input type="radio" ng-model="project.package" ng-value="bronze">
+    Bronze (1 GB)
+  </label><br/>
+  <label>
+    <input type="radio" ng-model="project.package" value="silver">
+    Silver (3 GB)
+  </label><br/>
+  <label>
+    <input type="radio" ng-model="project.package" value="gold">
+    Gold (5 GB)
+  </label><br/>
+  <label>
+    <input type="radio" ng-model="project.package" value="diamond">
+    Diamond (8 GB)
+  </label>
+</div>
+<button (click)="onAdd()"> Add </button>
