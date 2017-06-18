@@ -1,10 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-<<<<<<< HEAD
-=======
 import { FormsModule } from '@angular/forms';
->>>>>>> 52fba3d1c4b699d072bde269a25092594fe68e24
 import { HttpModule }    from '@angular/http';
 
 import { ROUTES } from './routes'

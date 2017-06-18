@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BusinessUser } from './business-user';
+import { BusinessUser } from './../models';
 
 @Component({
   selector: 'app-business-signup',
