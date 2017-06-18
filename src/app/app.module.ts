@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { WorkerSignupComponent } from './worker-signup/worker-signup.component';
 import { WorkerLoginComponent } from './worker-login/worker-login.component';
+import { ProjectCreateComponent } from './project-create/project-create.component';
 
 import { WorkerService } from './worker.service'
 
@@ -15,7 +16,8 @@ import { WorkerService } from './worker.service'
     AppComponent,
     HomeComponent,
     WorkerSignupComponent,
-    WorkerLoginComponent
+    WorkerLoginComponent,
+    ProjectCreateComponent
   ],
   imports: [
     BrowserModule,
