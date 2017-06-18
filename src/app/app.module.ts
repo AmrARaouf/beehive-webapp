@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpModule }    from '@angular/http';
 
 import { ROUTES } from './routes'
 import { AppComponent } from './app.component';
@@ -11,7 +12,7 @@ import { WorkerLoginComponent } from './worker-login/worker-login.component';
 import { ProjectCreateComponent } from './project-create/project-create.component';
 
 import { WorkerService } from './worker.service'
-import { ProjectService } from './project-create/project.service'
+import { ProjectService } from './project.service'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ProjectService } from './project-create/project.service'
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   providers: [
     WorkerService,
