@@ -13,6 +13,7 @@ import { ProjectCreateComponent } from './project-create/project-create.componen
 import { BusinessSignupComponent } from './business-signup/business-signup.component'
 
 import { WorkerService } from './services/worker.service'
+import { BusinessService } from './services/business.service'
 import { ProjectService } from './services/project.service'
 
 @NgModule({
@@ -32,6 +33,7 @@ import { ProjectService } from './services/project.service'
   ],
   providers: [
     WorkerService,
+    BusinessService,
     ProjectService
   ],
   bootstrap: [AppComponent]
