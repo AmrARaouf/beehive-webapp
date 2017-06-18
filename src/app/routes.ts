@@ -7,5 +7,5 @@ import { ProjectCreateComponent } from './project-create/project-create.componen
 export const ROUTES: Routes = [
   { path: '',  component: HomeComponent },
   { path: 'worker/signup', component: WorkerSignupComponent },
-  { path: 'worker/createproject', component: ProjectCreateComponent }
+  { path: 'business/createproject', component: ProjectCreateComponent }
 ];
