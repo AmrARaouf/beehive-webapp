@@ -66,9 +66,9 @@
       "spec": {
         "class": false,
         "component": false,
-        "directive": true,
+        "directive": false,
         "module": false,
-        "pipe": true,
+        "pipe": false,
         "service": false
       }
     }
