@@ -19,7 +19,7 @@ export class ProjectService {
           name: project.name,
           description: project.description,
           label_names: [project.label_names],
-          package_type: project.package_type
+          package: project.package
         }), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data as Project)
