@@ -6,6 +6,7 @@ import { HttpModule }    from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TagInputModule } from 'ng2-tag-input';
+import { NgUploaderModule } from 'ngx-uploader';
 
 import { ROUTES } from './routes'
 import { AppComponent } from './app.component';
@@ -38,7 +39,8 @@ import { NavbarComponent } from './navbar/navbar.component'
     FormsModule,
     HttpModule,
     TagInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgUploaderModule
   ],
   providers: [
     WorkerService,

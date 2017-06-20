@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router }            from '@angular/router';
 
+import { UploadOutput, UploadInput, UploadFile, humanizeBytes } from 'ngx-uploader'
+
 import { Project } from './../models';
 import { ProjectService } from './../services/project.service';
 
@@ -13,6 +15,10 @@ export class ProjectCreateComponent  {
   constructor(
     private projectService: ProjectService,
     private router: Router) { }
+
+  private numberOfTabs = 6;
+  activeTab: number = 1;
+  datasetFileName: string;
 
   project: Project = {
     name: '',
@@ -27,16 +33,22 @@ export class ProjectCreateComponent  {
     console.log(this.items);
   }
     
-  // }
-  onAdd(): void {
-    if (this.project.package == "Bronze")
-      this.project.package = "5946b1401218e35774c7c753";
-    else if (this.project.package == "Silver")
-      this.project.package = "5946b1491218e35774c7c754";
-    else if (this.project.package == "Gold")
-      this.project.package = "5946b1581218e35774c7c755";
-    else 
-      this.project.package = "5946b12d1218e35774c7c753";
-    this.projectService.create(this.project);
+  nextTab(): void {
+    if (this.activeTab < this.numberOfTabs) {
+      this.activeTab++;
+    }
   }
+
+  previousTab(): void {
+    if (this.activeTab > 1) {
+      this.activeTab--;
+    }
+  }
+
+  onDatasetUploadOutput(output: UploadOutput): void {
+    if (output.file) {
+      this.datasetFileName = output.file.name;
+    }
+  }
+
 }

@@ -28,7 +28,7 @@ h4.info-header {
   color: #ffc300;
 }
 
-#pricing{
+#pricing {
 	width: 989px;
 	margin: auto;
 	font-family: 'Open Sans', Helvetica;
@@ -132,8 +132,14 @@ h4.info-header {
 }
 
 .tip{
-	font-family: 'Indie Flower';
-	position: absolute;
-	color: rgb(117, 117, 117);
-	margin: 10px 5px;
+	font-§n: 10px 5px;
+}
+
+.file-name {
+  margin-top: 21px;
+  font-weight: bold;
+}
+
+label.upload-button input {
+  display: none;
 }
