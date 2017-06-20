@@ -9,13 +9,11 @@ import { ProjectService } from './../services/project.service';
   templateUrl: './project-create.component.html',
   styles: []
 })
-
 export class ProjectCreateComponent  {  
   constructor(
     private projectService: ProjectService,
     private router: Router) { }
 
-  title = 'Add Project';
   project: Project = {
     name: '',
     description: '',

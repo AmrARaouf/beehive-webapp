@@ -15,7 +15,8 @@ import { BusinessLoginComponent } from './business-login/business-login.componen
 
 import { WorkerService } from './services/worker.service'
 import { BusinessService } from './services/business.service'
-import { ProjectService } from './services/project.service'
+import { ProjectService } from './services/project.service';
+import { NavbarComponent } from './navbar/navbar.component'
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ProjectService } from './services/project.service'
     WorkerLoginComponent,
     ProjectCreateComponent,
     BusinessSignupComponent,
-    BusinessLoginComponent
+    BusinessLoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

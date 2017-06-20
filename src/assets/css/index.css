@@ -9,7 +9,8 @@ body {
   width: 100%;
 }
 body {
-  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
+  
 }
 hr {
   border-color: rgb(255, 195, 0);
@@ -23,11 +24,11 @@ a {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
-  color: #F05F40;
+  color: rgb(255, 195, 0);
 }
 a:hover,
 a:focus {
-  color:  rgb(255, 195, 0);
+  color:  rgb(255, 185, 0);
 }
 h1,
 h2,
@@ -35,7 +36,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
 }
 p {
   font-size: 16px;
@@ -296,7 +297,7 @@ header .header-content .header-content-inner p {
 .btn-default {
   color: #222222;
   background-color: white;
-  border-color: white;
+  border: 1px solid #eee !important;
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
@@ -308,7 +309,7 @@ header .header-content .header-content-inner p {
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
   color: #222222;
-  background-color: rgb(255, 195, 0);
+  background-color: #eee;
   border-color: #ededed;
 }
 .btn-default:active,

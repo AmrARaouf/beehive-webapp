@@ -1,1 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
+
+app-navbar #navbar {
+  background: #ffc300; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#ffc300, #ffd400); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#ffc300, #ffd400); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#ffc300, #ffd400); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#ffc300, #ffd400); /* Standard syntax (must be last) */
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+app-navbar a,
+app-navbar a:hover {
+  color: white;
+}
+
+app-navbar a.navbar-brand {
+  font-weight: bold;
+}
+
+app-navbar a.navbar-brand span.light {
+  font-weight: normal;
+}
+
+app-project-create div.tab-content.border {
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+app-project-create section {
+  padding: 48px 24px;
+}
+
+app-project-create .tab-content .border-right {
+  border-right: 1px solid #ddd;
+}
+
+app-project-create div.tab-buttons button {
+  margin: 0px 12px;
+}
+
+app-project-create h4.info-header {
+  margin-top: 0px;
+  margin-bottom: 12px;
+}
+
+app-project-create .nav-tabs a {
+  color: #bbb;
+}
+
+app-project-create .fa-info-circle {
+  color: #ffc300;
+}
+
+.header-separator {
+  height: 4px;
+  width: 75px;
+  background-color: #ffc300;
+  margin: 8px auto;
+}
+
+.section-margin {
+  margin-top: 24px;
+}
+
+textarea {
+  resize: vertical;
+}

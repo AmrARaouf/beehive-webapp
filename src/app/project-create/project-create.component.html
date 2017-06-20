@@ -1,33 +1,135 @@
-<h2>{{title}}</h2>
-<div>
-  <label>Name: </label>
-  <input [(ngModel)]="project.name">
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="page-title section-margin">
+    <h1 class="section-heading text-center">Create a Project</h1>
+    <hr class="primary">
+  </div>
+
+  <form class="section-margin">
+  <ul class="nav nav-tabs nav-justified">
+    <li role="presentation" class="active"><a data-toggle="tab" href="#section-1">Details</a></li>
+    <li role="presentation"><a data-toggle="tab" href="#section-2">Package</a></li>
+    <li role="presentation"><a data-toggle="tab" href="#section-3">Upload</a></li>
+    <li role="presentation"><a data-toggle="tab" href="#section-4">Annotations</a></li>
+    <li role="presentation"><a data-toggle="tab" href="#section-5">Tutorial</a></li>
+    <li role="presentation"><a data-toggle="tab" href="#section-6">Payment</a></li>
+  </ul>
+
+  <div class="tab-content border">
+    <section id="section-1" class="tab-pane fade in active">
+      <div class="row">
+        <div class="col-sm-7 border-right">
+          <div class="form-group">
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <textarea rows="2" class="form-control" id="description" name="description" [(ngModel)]="project.description" placeholder="Description"></textarea>
+          </div>
+        </div>
+
+        <div class="col-sm-5">
+          <h4 class="info-header">
+            <i class="fa fa-info-circle" aria-hidden="true"></i>
+            <span>Info</span>
+          </h4>
+          If you are using navs to provide a navigation bar, be sure to add a role="navigation" to the most logical parent container of the blabla.
+        </div>
+      </div>
+    </section>
+
+    <section id="section-2" class="tab-pane fade">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-3" class="tab-pane fade">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-4" class="tab-pane fade">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <textarea rows="2" class="form-control" id="description" name="description" [(ngModel)]="project.description" placeholder="Description"></textarea>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-5" class="tab-pane fade">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-6" class="tab-pane fade">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+  </form>
+
+  <div class="tab-buttons section-margin">
+    <button type="submit" class="btn btn-primary pull-right">Next</button>
+    <button type="submit" class="btn btn-default pull-right">Back</button>
+  </div>
+
 </div>
-<div>
-  <label>Description: </label>
-  <input [(ngModel)]="project.description" />
-</div>
-<div>
-  <label>Package: </label><br/>
-  <label>
-    <input type="radio" ng-model="project.package" value="free">
-    Free (0.5 GB)
-  </label><br/>
-  <label>
-    <input type="radio" ng-model="project.package" ng-value="bronze">
-    Bronze (1 GB)
-  </label><br/>
-  <label>
-    <input type="radio" ng-model="project.package" value="silver">
-    Silver (3 GB)
-  </label><br/>
-  <label>
-    <input type="radio" ng-model="project.package" value="gold">
-    Gold (5 GB)
-  </label><br/>
-  <label>
-    <input type="radio" ng-model="project.package" value="diamond">
-    Diamond (8 GB)
-  </label>
-</div>
-<button (click)="onAdd()"> Add </button>
