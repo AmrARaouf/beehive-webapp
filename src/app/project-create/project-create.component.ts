@@ -14,24 +14,25 @@ export class ProjectCreateComponent  {
     private projectService: ProjectService,
     private router: Router) { }
 
+  private numberOfTabs = 6;
+  activeTab: number = 4;
+
   project: Project = {
     name: '',
     description: '',
     label_names: '',
     package: ''
   };
-  // ngOnInit(): void {
-    
-  // }
-  onAdd(): void {
-    if (this.project.package == "Bronze")
-      this.project.package = "5946b1401218e35774c7c753";
-    else if (this.project.package == "Silver")
-      this.project.package = "5946b1491218e35774c7c754";
-    else if (this.project.package == "Gold")
-      this.project.package = "5946b1581218e35774c7c755";
-    else 
-      this.project.package = "5946b12d1218e35774c7c753";
-    this.projectService.create(this.project);
+  
+  nextTab(): void {
+    if (this.activeTab < this.numberOfTabs) {
+      this.activeTab++;
+    }
+  }
+
+  previousTab(): void {
+    if (this.activeTab > 1) {
+      this.activeTab--;
+    }
   }
 }
