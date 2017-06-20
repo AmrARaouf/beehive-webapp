@@ -17,7 +17,8 @@
   </ul>
 
   <div class="tab-content border">
-    <section id="section-1" class="tab-pane fade in active">
+    <!-- Details tab -->
+    <section id="section-1" class="tab-pane fade">
       <div class="row">
         <div class="col-sm-7 border-right">
           <div class="form-group">
@@ -37,7 +38,9 @@
         </div>
       </div>
     </section>
+    <!-- End: Details tab -->
 
+    <!-- Package tab -->
     <section id="section-2" class="tab-pane fade">
       <div class="row">
         <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
@@ -58,22 +61,32 @@
         </div>
       </div>
     </section>
+    <!-- End: Package tab -->
 
-    <section id="section-3" class="tab-pane fade">
+    <!-- Upload tab -->
+    <section id="section-3" class="tab-pane fade in active">
       <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
-          <form>
-            <div class="form-group">
-              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
-            </div>
-          </form>
+        <div class="col-sm-7 border-right">
+          <div class="form-group">
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <textarea rows="2" class="form-control" id="description" name="description" [(ngModel)]="project.description" placeholder="Description"></textarea>
+          </div>
+        </div>
+
+        <div class="col-sm-5">
+          <h4 class="info-header">
+            <i class="fa fa-info-circle" aria-hidden="true"></i>
+            <span>Info</span>
+          </h4>
+          If you are using navs to provide a navigation bar, be sure to add a role="navigation" to the most logical parent container of the blabla.
         </div>
       </div>
     </section>
+    <!-- End: Upload tab -->
 
+    <!-- Annotations tab -->
     <section id="section-4" class="tab-pane fade">
       <div class="row">
         <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
@@ -88,7 +101,9 @@
         </div>
       </div>
     </section>
+    <!-- End: Annotations tab -->
 
+    <!-- Tutorial tab -->
     <section id="section-5" class="tab-pane fade">
       <div class="row">
         <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
@@ -109,7 +124,9 @@
         </div>
       </div>
     </section>
+    <!-- End: Tutorial tab -->
 
+    <!-- Payment tab -->
     <section id="section-6" class="tab-pane fade">
       <div class="row">
         <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
@@ -124,6 +141,7 @@
         </div>
       </div>
     </section>
+    <!-- End: Payment tab -->
   </div>
   </form>
 
