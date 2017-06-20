@@ -20,7 +20,12 @@ export class ProjectCreateComponent  {
     label_names: '',
     package: ''
   };
-  // ngOnInit(): void {
+  
+  items: string[] = ['Person','Car'];
+
+  onSelect(): void {
+    console.log(this.items);
+  }
     
   // }
   onAdd(): void {

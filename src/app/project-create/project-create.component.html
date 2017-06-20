@@ -39,24 +39,39 @@
     </section>
 
     <section id="section-2" class="tab-pane fade">
-      <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
-          <form>
-            <div class="form-group">
-              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
-            </div>
-          </form>
-        </div>
-      </div>
+    <div id="pricing">
+  <div class="price_card alpha">
+    <div class="header">
+      <span class="price">$500</span>
+      <span class="name">Bronze Pack</span>
+    </div>
+    <ul class="features">
+      <li>Up to 10GB of data</li>
+    </ul>
+    <button>Add to cart</button>
+  </div>
+  <div class="price_card bravo">
+    <div class="header">
+      <span class="price">$1000</span>
+      <span class="name">Silver Pack</span>
+    </div>
+    <ul class="features">
+      <li>Up to 50GB of data</li>
+    </ul>
+    <button>Add to cart</button>
+  </div>
+  <div class="price_card charlie">
+    <div class="header">
+      <span class="price">$2000</span>
+      <span class="name">Gold Pack</span>
+    </div>
+    <ul class="features">
+      <li>Up to 100GB of data</li>
+    </ul>
+    <button>Add to cart</button>
+  </div>
+</div>
+
     </section>
 
     <section id="section-3" class="tab-pane fade">
@@ -76,15 +91,33 @@
 
     <section id="section-4" class="tab-pane fade">
       <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
-          <form>
-            <div class="form-group">
-              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
-            </div>
-            <div class="form-group">
-              <textarea rows="2" class="form-control" id="description" name="description" [(ngModel)]="project.description" placeholder="Description"></textarea>
-            </div>
-          </form>
+        <div class="col-sm-7 border-right">
+         <div class="form-group">
+            <tag-input [(ngModel)]="items"
+                       (onSelect)="onSelect($event)"
+                       [modelAsStrings]="true"
+                       [ngModelOptions]="{standalone: true}">
+            </tag-input>
+        </div>
+        <div class="form-group">
+          
+          <select class="form-control" id="sel1">
+           <option hidden >Number of Annotators</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </div>
+        </div>
+
+        <div class="col-sm-5">
+          <h4 class="info-header">
+            <i class="fa fa-info-circle" aria-hidden="true"></i>
+            <span>Info</span>
+          </h4>
+          Add required Labels for annotation.
+          Enter the number of annotators per image in the dataset.
         </div>
       </div>
     </section>

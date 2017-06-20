@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule }    from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { TagInputModule } from 'ng2-tag-input';
 
 import { ROUTES } from './routes'
 import { AppComponent } from './app.component';
@@ -33,7 +36,9 @@ import { NavbarComponent } from './navbar/navbar.component'
     BrowserModule,
     RouterModule.forRoot(ROUTES),
     FormsModule,
-    HttpModule
+    HttpModule,
+    TagInputModule,
+    BrowserAnimationsModule
   ],
   providers: [
     WorkerService,
