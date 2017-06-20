@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
+import { NgUploaderModule } from 'ngx-uploader';
+
 import { ROUTES } from './routes'
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -33,7 +35,8 @@ import { NavbarComponent } from './navbar/navbar.component'
     BrowserModule,
     RouterModule.forRoot(ROUTES),
     FormsModule,
-    HttpModule
+    HttpModule,
+    NgUploaderModule
   ],
   providers: [
     WorkerService,

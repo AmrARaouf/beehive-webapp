@@ -10,7 +10,7 @@
   <ul class="nav nav-tabs nav-justified">
     <li role="presentation" [class.active]="activeTab == 1"><a data-toggle="tab" href="#section-1">Details</a></li>
     <li role="presentation" [class.active]="activeTab == 2"><a data-toggle="tab" href="#section-2">Package</a></li>
-    <li role="presentation" [class.active]="activeTab == 3"><a data-toggle="tab" href="#section-3">Upload</a></li>
+    <li role="presentation" [class.active]="activeTab == 3"><a data-toggle="tab" href="#section-3">Dataset</a></li>
     <li role="presentation" [class.active]="activeTab == 4"><a data-toggle="tab" href="#section-4">Annotations</a></li>
     <li role="presentation" [class.active]="activeTab == 5"><a data-toggle="tab" href="#section-5">Tutorial</a></li>
     <li role="presentation" [class.active]="activeTab == 6"><a data-toggle="tab" href="#section-6">Payment</a></li>
@@ -34,7 +34,7 @@
             <i class="fa fa-info-circle" aria-hidden="true"></i>
             <span>Info</span>
           </h4>
-          If you are using navs to provide a navigation bar, be sure to add a role="navigation" to the most logical parent container of the blabla.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </div>
       </div>
     </section>
@@ -63,15 +63,16 @@
     </section>
     <!-- End: Package tab -->
 
-    <!-- Upload tab -->
+    <!-- Dataset tab -->
     <section id="section-3" class="tab-pane fade" [class.in]="activeTab == 3" [class.active]="activeTab == 3">
       <div class="row">
         <div class="col-sm-7 border-right">
-          <div class="form-group">
-            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
-          </div>
-          <div class="form-group">
-            <textarea rows="2" class="form-control" id="description" name="description" [(ngModel)]="project.description" placeholder="Description"></textarea>
+          <div class="form-group text-center">
+            <label class="btn btn-primary upload-button">
+              Choose ZIP file
+              <input type="file" accept=".zip" ngFileSelect (uploadOutput)="onDatasetUploadOutput($event)" [uploadInput]="uploadInput">
+            </label>
+            <div class="file-name">{{datasetFileName}}</div>
           </div>
         </div>
 
@@ -80,11 +81,11 @@
             <i class="fa fa-info-circle" aria-hidden="true"></i>
             <span>Info</span>
           </h4>
-          If you are using navs to provide a navigation bar, be sure to add a role="navigation" to the most logical parent container of the blabla.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </div>
       </div>
     </section>
-    <!-- End: Upload tab -->
+    <!-- End: Dataset tab -->
 
     <!-- Annotations tab -->
     <section id="section-4" class="tab-pane fade" [class.in]="activeTab == 4" [class.active]="activeTab == 4">

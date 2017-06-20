@@ -27,3 +27,12 @@ h4.info-header {
 .fa-info-circle {
   color: #ffc300;
 }
+
+.file-name {
+  margin-top: 21px;
+  font-weight: bold;
+}
+
+label.upload-button input {
+  display: none;
+}
