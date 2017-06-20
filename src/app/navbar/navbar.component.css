@@ -1,0 +1,21 @@
+#navbar {
+  background: #ffc300; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#ffc300, #ffd400); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#ffc300, #ffd400); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#ffc300, #ffd400); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#ffc300, #ffd400); /* Standard syntax (must be last) */
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+a,
+a:hover {
+  color: white;
+}
+
+a.navbar-brand {
+  font-weight: bold;
+}
+
+a.navbar-brand span.light {
+  font-weight: normal;
+}

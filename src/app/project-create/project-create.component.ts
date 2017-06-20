@@ -7,7 +7,7 @@ import { ProjectService } from './../services/project.service';
 @Component({
   selector: 'app-project-create',
   templateUrl: './project-create.component.html',
-  styles: []
+  styleUrls: ['./project-create.component.css']
 })
 export class ProjectCreateComponent  {  
   constructor(

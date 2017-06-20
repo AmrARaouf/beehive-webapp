@@ -1,0 +1,29 @@
+div.tab-content.border {
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+section {
+  padding: 48px 24px;
+}
+
+.tab-content .border-right {
+  border-right: 1px solid #ddd;
+}
+
+div.tab-buttons button {
+  margin: 0px 12px;
+}
+
+h4.info-header {
+  margin-top: 0px;
+  margin-bottom: 12px;
+}
+
+.nav-tabs a {
+  color: #bbb;
+}
+
+.fa-info-circle {
+  color: #ffc300;
+}
