@@ -17,7 +17,7 @@ export class ProjectCreateComponent  {
     private router: Router) { }
 
   private numberOfTabs = 6;
-  activeTab: number = 3;
+  activeTab: number = 1;
   datasetFileName: string;
 
   project: Project = {
