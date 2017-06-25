@@ -6,15 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class BusinessLoginComponent {
-
   user = {
     email: '',
     password: ''
-  }
-
-  login() {
-    // auth
-    console.log("hello");
   }
 
 }
