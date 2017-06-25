@@ -15,8 +15,4 @@ export class BusinessSignupComponent {
     password: '',
     message: ''
   };
-
-  signup() {
-    // send user to server 
-  }
 }
