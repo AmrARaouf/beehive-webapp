@@ -5,11 +5,13 @@ import { BusinessSignupComponent } from './business-signup/business-signup.compo
 import { BusinessLoginComponent } from './business-login/business-login.component'
 import { WorkerSignupComponent } from './worker-signup/worker-signup.component'
 import { ProjectCreateComponent } from './project-create/project-create.component'
+import { ProjectsComponent } from './projects/projects.component'
 
 export const ROUTES: Routes = [
   { path: '', component: HomeComponent },
   { path: 'business/signup', component: BusinessSignupComponent },
   { path: 'business/login', component: BusinessLoginComponent },
   { path: 'worker/signup', component: WorkerSignupComponent },
-  { path: 'business/new-project', component: ProjectCreateComponent }
+  { path: 'business/new-project', component: ProjectCreateComponent },
+  { path: 'project/projects', component: ProjectsComponent }
 ];

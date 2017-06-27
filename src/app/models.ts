@@ -13,3 +13,8 @@ export class BusinessUser {
   password: string;
   message: string;
 }
+
+export interface BusinessUserCredentials {
+  email: string;
+  password: string;
+}
