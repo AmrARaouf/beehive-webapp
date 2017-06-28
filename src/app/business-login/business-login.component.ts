@@ -18,9 +18,6 @@ export class BusinessLoginComponent {
   constructor(private businessService: BusinessService) { }
 
   login(): void {
-    // console.log(businessUser);
-    // this.user.email = businessUser.email;
-    // this.user.password = businessUser.password;
     this.businessService.login(this.userCredentials).then();
   }
 }

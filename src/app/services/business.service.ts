@@ -12,20 +12,21 @@ import { BusinessLoginComponent } from './../business-login/business-login.compo
 export class BusinessService {
 
   private headers = new Headers({ 'Content-Type': 'application/json' });
+  private options = new RequestOptions({ headers: this.headers, withCredentials: true });
   private baseUrl = environment.apiUrl;
 
   constructor(private http: Http,
               private router: Router) { }
 
   signup(businessUser: BusinessUser): Promise<BusinessUser> {
-    return this.http.post(`${this.baseUrl}business/users`, JSON.stringify(businessUser), {headers: this.headers})
+    return this.http.post(`${this.baseUrl}business/users`, JSON.stringify(businessUser), this.options)
       .toPromise()
       .then(response => response.json().data as BusinessUser)
       .catch(this.handleError);
   }
 
   login(businessUserCredentials: BusinessUserCredentials): Promise<BusinessUser> {
-    return this.http.post(`${this.baseUrl}business/login`, JSON.stringify(businessUserCredentials), {headers: this.headers})
+    return this.http.post(`${this.baseUrl}/business/login`, JSON.stringify(businessUserCredentials), this.options)
     .toPromise()
     .then(response => {
       response.json().data as BusinessUser;

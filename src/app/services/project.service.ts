@@ -1,5 +1,5 @@
 import { Injectable }    from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Headers, Http, RequestOptions } from '@angular/http';
 import { Router }   from '@angular/router';
 
 import 'rxjs/add/operator/toPromise';
@@ -10,7 +10,8 @@ import { environment } from './../../environments/environment';
 export class ProjectService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private projectsUrl = environment.apiUrl + 'project/projects';  // URL to web api
+  private options = new RequestOptions({ headers: this.headers, withCredentials: true });
+  private projectsUrl = environment.apiUrl + '/project/projects';  // URL to web api
 
   constructor(private http: Http,
               private router: Router) { }
@@ -30,7 +31,7 @@ export class ProjectService {
 
   getProjects(): Promise<Project[]> {
     return this.http
-      .get(this.projectsUrl, {headers: this.headers})
+      .get(this.projectsUrl, this.options)
       .toPromise()
       .then(res => res.json().data as Project[])
       .catch(this.handleError)
