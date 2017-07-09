@@ -1,6 +1,7 @@
+<app-navbar></app-navbar>
 <h2>My Projects</h2>
 <ul>
     <li *ngFor = "let project of projects">
-        <div (click)="onSelect(project)">{{project.name}}</div>
+        <a [routerLink]="[project._id]">{{project.name}}</a>
     </li>
 </ul>

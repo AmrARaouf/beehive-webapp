@@ -1,9 +1,15 @@
+export interface Package {
+  _id?: string;
+  name: string;
+  max_storage: number;
+}
+
 export interface Project {
   _id?: string;
   name: string;
   description: string;
   label_names: string[];
-  package: string;
+  package: Package;
 }
 
 export interface BusinessUser {

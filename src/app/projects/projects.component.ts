@@ -6,7 +6,7 @@ import { ProjectService } from '@app/services/project.service';
 import { Project } from '@app/models';
 
 @Component({
-  selector: 'projects',
+  selector: 'app-projects',
   templateUrl: './projects.component.html',
   styles: []
 })
@@ -21,11 +21,6 @@ export class ProjectsComponent implements OnInit {
     this.projectService
     .getProjects()
     .then(projects => this.projects = projects);
-  }
-
-  onSelect(project: Project): void {
-    this.selectedProject = project;
-    this.router.navigate(['projects', this.selectedProject._id]);
   }
 
   ngOnInit(): void {

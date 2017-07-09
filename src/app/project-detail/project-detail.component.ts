@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { ProjectService } from '.././services/project.service';
+import { ProjectService } from '@app/services/project.service';
 
-import { Project } from '.././models';
+import { Project } from '@app/models';
 
 @Component({
-    selector: 'project',
+    selector: 'app-project-detail',
     templateUrl: './project-detail.component.html',
     styles: []
 })

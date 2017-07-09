@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Project } from '@app/models';
+import { Project, Package } from '@app/models';
 import { environment } from '@env/environment';
 
 @Injectable()
@@ -23,7 +23,10 @@ export class ProjectService {
       name: '',
       description: '',
       label_names: [],
-      package: ''
+      package: <Package> {
+        name: '',
+        max_storage: 0
+      }
     }
   }
 
