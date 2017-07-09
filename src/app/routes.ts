@@ -8,13 +8,17 @@ import { ProjectsComponent } from '@app/projects/projects.component'
 
 import { WorkerHomeComponent } from '@app/worker-home/worker-home.component'
 import { WorkerSignupComponent } from '@app/worker-signup/worker-signup.component'
+import { WorkerTutorialComponent } from '@app/worker-tutorial/worker-tutorial.component'
 
 export const ROUTES: Routes = [
   { path: '', component: HomeComponent },
   { path: 'business/signup', component: BusinessSignupComponent },
   { path: 'business/login', component: BusinessLoginComponent },
+
   { path: 'worker/signup', component: WorkerSignupComponent },
   { path: 'worker', component: WorkerHomeComponent },
+  { path: 'worker/tutorial', component: WorkerTutorialComponent },
+
   { path: 'business/new-project', component: ProjectCreateComponent },
   { path: 'project/projects', component: ProjectsComponent }
 ];

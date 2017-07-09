@@ -22,7 +22,8 @@ import { WorkerService } from './services/worker.service'
 import { BusinessService } from './services/business.service'
 import { ProjectService } from './services/project.service';
 import { NavbarComponent } from './navbar/navbar.component';
-import { WorkerHomeComponent } from './worker-home/worker-home.component'
+import { WorkerHomeComponent } from './worker-home/worker-home.component';
+import { WorkerTutorialComponent } from './worker-tutorial/worker-tutorial.component'
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { WorkerHomeComponent } from './worker-home/worker-home.component'
     BusinessSignupComponent,
     BusinessLoginComponent,
     NavbarComponent,
-    WorkerHomeComponent
+    WorkerHomeComponent,
+    WorkerTutorialComponent
   ],
   imports: [
     BrowserModule,
