@@ -5,21 +5,22 @@ import { ProjectService } from '@app/services/project.service';
 import { Project } from '@app/models';
 
 @Component({
-  selector: 'app-projects',
+  selector: 'projects',
   templateUrl: './projects.component.html',
-  styles: [],
-  providers: [ProjectService]
+  styles: []
 })
 export class ProjectsComponent implements OnInit {
-    projects: Project[] = []
+  projects: Project[];
 
   constructor(private projectService: ProjectService) { }
 
-  ngOnInit(): void {
-    this.getProjects();
+  getProjects(): void {
+    this.projectService
+    .getProjects()
+    .then(projects => {this.projects = projects; console.log(projects)});
   }
 
-  getProjects(): void {
-    this.projectService.getProjects().then(projects => this.projects = projects);
+  ngOnInit(): void {
+    this.getProjects();
   }
 }

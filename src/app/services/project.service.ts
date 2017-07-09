@@ -24,7 +24,7 @@ export class ProjectService {
           description: project.description,
           label_names: [project.label_names],
           package: project.package
-        }), {headers: this.headers})
+        }), this.options)
       .toPromise()
       .then(res => res.json().data as Project)
       .catch(this.handleError);
@@ -34,8 +34,7 @@ export class ProjectService {
     return this.http
       .get(this.projectsUrl, this.options)
       .toPromise()
-      .then(res => res.json().data as Project[])
-      .catch(this.handleError)
+      .then(res => {console.log(res.json()); return res.json().projects as Project[]})
   } 
 
   private handleError(error: any): Promise<any> {
