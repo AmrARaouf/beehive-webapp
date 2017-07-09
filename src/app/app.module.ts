@@ -23,7 +23,8 @@ import { BusinessService } from './services/business.service'
 import { ProjectService } from './services/project.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { WorkerHomeComponent } from './worker-home/worker-home.component';
-import { WorkerTutorialComponent } from './worker-tutorial/worker-tutorial.component'
+import { WorkerTutorialComponent } from './worker-tutorial/worker-tutorial.component';
+import { WorkerTagComponent } from './worker-tag/worker-tag.component'
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { WorkerTutorialComponent } from './worker-tutorial/worker-tutorial.compo
     BusinessLoginComponent,
     NavbarComponent,
     WorkerHomeComponent,
-    WorkerTutorialComponent
+    WorkerTutorialComponent,
+    WorkerTagComponent
   ],
   imports: [
     BrowserModule,
