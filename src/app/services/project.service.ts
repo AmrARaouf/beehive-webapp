@@ -34,7 +34,7 @@ export class ProjectService {
     return this.http
       .get(this.projectsUrl, this.options)
       .toPromise()
-      .then(res => {console.log(res.json()); return res.json().projects as Project[]})
+      .then(res => res.json().projects as Project[])
   } 
 
   private handleError(error: any): Promise<any> {

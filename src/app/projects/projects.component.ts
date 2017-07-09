@@ -17,7 +17,7 @@ export class ProjectsComponent implements OnInit {
   getProjects(): void {
     this.projectService
     .getProjects()
-    .then(projects => {this.projects = projects; console.log(projects)});
+    .then(projects => this.projects = projects);
   }
 
   ngOnInit(): void {
