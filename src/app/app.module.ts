@@ -22,7 +22,10 @@ import { BusinessLoginComponent } from './business-login/business-login.componen
 import { WorkerService } from './services/worker.service'
 import { BusinessService } from './services/business.service'
 import { ProjectService } from './services/project.service';
-import { NavbarComponent } from './navbar/navbar.component'
+import { NavbarComponent } from './navbar/navbar.component';
+import { WorkerHomeComponent } from './worker-home/worker-home.component';
+import { WorkerTutorialComponent } from './worker-tutorial/worker-tutorial.component';
+import { WorkerTagComponent } from './worker-tag/worker-tag.component'
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { NavbarComponent } from './navbar/navbar.component'
     ProjectDetailComponent,
     BusinessSignupComponent,
     BusinessLoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    WorkerHomeComponent,
+    WorkerTutorialComponent,
+    WorkerTagComponent
   ],
   imports: [
     BrowserModule,
