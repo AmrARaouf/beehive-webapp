@@ -1,10 +1,11 @@
-import { Injectable }    from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Headers, Http, RequestOptions } from '@angular/http';
-import { Router }   from '@angular/router';
+import { Router } from '@angular/router';
 
 import 'rxjs/add/operator/toPromise';
-import { Project } from './../models';
-import { environment } from './../../environments/environment';
+
+import { Project } from '@app/models';
+import { environment } from '@env/environment';
 
 @Injectable()
 export class ProjectService {

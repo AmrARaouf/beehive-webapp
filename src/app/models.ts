@@ -1,11 +1,11 @@
-export class Project {
+export interface Project {
   name: string;
   description: string;
   label_names: string;
   package: string;
 }
 
-export class BusinessUser {
+export interface BusinessUser {
   full_name: string;
   organization: string;
   email: string;

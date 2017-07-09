@@ -4,9 +4,9 @@ import { Router }   from '@angular/router';
 
 import 'rxjs/add/operator/toPromise';
 
-import { environment } from './../../environments/environment';
-import { BusinessUser, BusinessUserCredentials } from './../models'
-import { BusinessLoginComponent } from './../business-login/business-login.component'
+import { environment } from '@env/environment';
+import { BusinessUser, BusinessUserCredentials } from '@app/models'
+import { BusinessLoginComponent } from '@app/business-login/business-login.component'
 
 @Injectable()
 export class BusinessService {

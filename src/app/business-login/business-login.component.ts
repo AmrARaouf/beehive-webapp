@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { BusinessService } from '.././services/business.service';
-
-import { BusinessUserCredentials } from '.././models';
+import { BusinessService } from '@app/services/business.service';
+import { BusinessUserCredentials } from '@app/models';
 
 @Component({
   selector: 'app-business-login',

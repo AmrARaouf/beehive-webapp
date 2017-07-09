@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router }            from '@angular/router';
+import { Router } from '@angular/router';
+
+import { Project } from '@app/models';
+import { ProjectService } from '@app/services/project.service';
 
 import { UploadOutput, UploadInput, UploadFile, humanizeBytes } from 'ngx-uploader'
-
-import { Project } from './../models';
-import { ProjectService } from './../services/project.service';
 
 @Component({
   selector: 'app-project-create',
