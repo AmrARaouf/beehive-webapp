@@ -1,11 +1,13 @@
 <app-navbar></app-navbar>
-<h2>{{project.name}}</h2>
-<div>
-    Description: {{project.description}}
-</div>
-<div>
-    Labels: <span *ngFor="let label of project.label_names; let isLast=last">{{label}}{{isLast ? '' : ', '}}</span>
-</div>
-<div>
-    Package: {{project.package.name}}
+<div class="container">
+    <h2>{{project.name}}</h2>
+    <div>
+        Description: {{project.description}}
+    </div>
+    <div>
+        Labels: <span *ngFor="let label of project.label_names; let isLast=last">{{label}}{{isLast ? '' : ', '}}</span>
+    </div>
+    <div>
+        Package: {{project.package.name}}
+    </div>
 </div>

@@ -23,7 +23,7 @@ export const ROUTES: Routes = [
   { path: 'worker/tutorial', component: WorkerTutorialComponent },
   { path: 'worker/tag', component: WorkerTagComponent },
 
-  { path: 'business/new-project', component: ProjectCreateComponent },
+  { path: 'projects/new-project', component: ProjectCreateComponent },
   { path: 'projects', component: ProjectsComponent },
   { path: 'projects/:id', component: ProjectDetailComponent }
 ];
