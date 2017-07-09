@@ -8,21 +8,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TagInputModule } from 'ng2-tag-input';
 import { NgUploaderModule } from 'ngx-uploader';
 
-import { ROUTES } from './routes'
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { WorkerSignupComponent } from './worker-signup/worker-signup.component';
-import { WorkerLoginComponent } from './worker-login/worker-login.component';
-import { ProjectCreateComponent } from './project-create/project-create.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { ProjectDetailComponent } from './project-detail/project-detail.component';
-import { BusinessSignupComponent } from './business-signup/business-signup.component';
-import { BusinessLoginComponent } from './business-login/business-login.component'
+import { ROUTES } from '@app/routes'
+import { AppComponent } from '@app/app.component';
+import { HomeComponent } from '@app/home/home.component';
+import { WorkerSignupComponent } from '@app/worker-signup/worker-signup.component';
+import { WorkerLoginComponent } from '@app/worker-login/worker-login.component';
+import { ProjectCreateComponent } from '@app/project-create/project-create.component';
+import { ProjectsComponent } from '@app/projects/projects.component';
+import { ProjectDetailComponent } from '@app/project-detail/project-detail.component';
+import { BusinessSignupComponent } from '@app/business-signup/business-signup.component';
+import { BusinessLoginComponent } from '@app/business-login/business-login.component'
 
-import { WorkerService } from './services/worker.service'
-import { BusinessService } from './services/business.service'
-import { ProjectService } from './services/project.service';
-import { NavbarComponent } from './navbar/navbar.component'
+import { WorkerService } from '@app/_services/worker.service'
+import { BusinessService } from '@app/_services/business.service'
+import { ProjectService } from '@app/_services/project.service';
+import { NavbarComponent } from '@app/navbar/navbar.component';
+import { WorkerHomeComponent } from '@app/worker-home/worker-home.component';
+import { WorkerTutorialComponent } from '@app/worker-tutorial/worker-tutorial.component';
+import { WorkerTagComponent } from '@app/worker-tag/worker-tag.component';
+import { AnnotoriousDirective } from '@app/_directives/annotorious.directive'
 
 @NgModule({
   declarations: [
@@ -35,7 +39,11 @@ import { NavbarComponent } from './navbar/navbar.component'
     ProjectDetailComponent,
     BusinessSignupComponent,
     BusinessLoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    WorkerHomeComponent,
+    WorkerTutorialComponent,
+    WorkerTagComponent,
+    AnnotoriousDirective
   ],
   imports: [
     BrowserModule,
