@@ -15,6 +15,7 @@ import { WorkerSignupComponent } from './worker-signup/worker-signup.component';
 import { WorkerLoginComponent } from './worker-login/worker-login.component';
 import { ProjectCreateComponent } from './project-create/project-create.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { BusinessSignupComponent } from './business-signup/business-signup.component';
 import { BusinessLoginComponent } from './business-login/business-login.component'
 
@@ -31,6 +32,7 @@ import { NavbarComponent } from './navbar/navbar.component'
     WorkerLoginComponent,
     ProjectCreateComponent,
     ProjectsComponent,
+    ProjectDetailComponent,
     BusinessSignupComponent,
     BusinessLoginComponent,
     NavbarComponent

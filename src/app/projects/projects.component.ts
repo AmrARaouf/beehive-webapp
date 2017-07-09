@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router }   from '@angular/router';
 
 import { ProjectService } from '@app/services/project.service';
 
@@ -11,13 +12,20 @@ import { Project } from '@app/models';
 })
 export class ProjectsComponent implements OnInit {
   projects: Project[];
+  selectedProject: Project;
 
-  constructor(private projectService: ProjectService) { }
+  constructor(private projectService: ProjectService,
+              private router: Router) { }
 
   getProjects(): void {
     this.projectService
     .getProjects()
     .then(projects => this.projects = projects);
+  }
+
+  onSelect(project: Project): void {
+    this.selectedProject = project;
+    this.router.navigate(['projects', this.selectedProject._id]);
   }
 
   ngOnInit(): void {

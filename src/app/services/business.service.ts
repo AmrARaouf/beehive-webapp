@@ -30,7 +30,7 @@ export class BusinessService {
     .toPromise()
     .then(response => {
       response.json().data as BusinessUser;
-      this.router.navigate(['/project/projects'])})
+      this.router.navigate(['/projects'])})
     .catch(this.handleError)
   }
 

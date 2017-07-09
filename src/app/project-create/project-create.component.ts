@@ -11,7 +11,7 @@ import { UploadOutput, UploadInput, UploadFile, humanizeBytes } from 'ngx-upload
   templateUrl: './project-create.component.html',
   styleUrls: ['./project-create.component.css']
 })
-export class ProjectCreateComponent  {  
+export class ProjectCreateComponent implements OnInit {  
   constructor(
     private projectService: ProjectService,
     private router: Router) { }
@@ -20,14 +20,13 @@ export class ProjectCreateComponent  {
   activeTab: number = 1;
   datasetFileName: string;
 
-  project: Project = {
-    name: '',
-    description: '',
-    label_names: '',
-    package: ''
-  };
+  project: Project;
   
   items: string[] = ['Person','Car'];
+
+  ngOnInit(): void {
+    this.project = this.projectService.initializeProject();
+  }
 
   onSelect(): void {
     console.log(this.items);

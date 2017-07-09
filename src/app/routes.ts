@@ -6,6 +6,7 @@ import { BusinessLoginComponent } from './business-login/business-login.componen
 import { WorkerSignupComponent } from './worker-signup/worker-signup.component'
 import { ProjectCreateComponent } from './project-create/project-create.component'
 import { ProjectsComponent } from './projects/projects.component'
+import { ProjectDetailComponent } from './project-detail/project-detail.component'
 
 export const ROUTES: Routes = [
   { path: '', component: HomeComponent },
@@ -13,5 +14,6 @@ export const ROUTES: Routes = [
   { path: 'business/login', component: BusinessLoginComponent },
   { path: 'worker/signup', component: WorkerSignupComponent },
   { path: 'business/new-project', component: ProjectCreateComponent },
-  { path: 'project/projects', component: ProjectsComponent }
+  { path: 'projects', component: ProjectsComponent },
+  { path: 'projects/:id', component: ProjectDetailComponent }
 ];

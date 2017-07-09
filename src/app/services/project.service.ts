@@ -12,10 +12,20 @@ export class ProjectService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   private options = new RequestOptions({ headers: this.headers, withCredentials: true });
-  private projectsUrl = environment.apiUrl + '/project/projects';  // URL to web api
+  private projectsUrl = environment.apiUrl + '/projects';  // URL to web api
+  private projects = [];
 
   constructor(private http: Http,
               private router: Router) { }
+
+  initializeProject(): Project {
+    return <Project> {
+      name: '',
+      description: '',
+      label_names: [],
+      package: ''
+    }
+  }
 
   create(project: Project): Promise<Project> {
     return this.http
@@ -34,8 +44,23 @@ export class ProjectService {
     return this.http
       .get(this.projectsUrl, this.options)
       .toPromise()
-      .then(res => res.json().projects as Project[])
-  } 
+      .then(res => {this.projects = res.json().projects;
+                    return res.json().projects as Project[]})
+  }
+
+  getProject(projectId: string): Promise<Project> {
+    var project = this.projects.find(project => project._id == projectId)
+    if(project) {
+      return new Promise<Project>((resolve, reject) => {
+        resolve(project);
+      });
+    } else {
+      return this.http
+      .get(`${this.projectsUrl}/${projectId}`, this.options)
+      .toPromise()
+      .then(res => res.json().project as Project)
+    }
+  }
 
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only

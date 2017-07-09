@@ -1,6 +1,6 @@
 <h2>My Projects</h2>
-<ol>
-    <li *ngFor="let project of projects">
-        <div>{{project.name}}</div>
+<ul>
+    <li *ngFor = "let project of projects">
+        <div (click)="onSelect(project)">{{project.name}}</div>
     </li>
-</ol>
+</ul>

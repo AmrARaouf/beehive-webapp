@@ -1,7 +1,8 @@
 export interface Project {
+  _id?: string;
   name: string;
   description: string;
-  label_names: string;
+  label_names: string[];
   package: string;
 }
 
