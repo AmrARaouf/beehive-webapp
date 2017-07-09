@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AnnotoriousDirective } from '@app/_directives/annotorious.directive';
 
 @Component({
   selector: 'app-tag-game',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { BusinessService } from '@app/services/business.service';
+import { BusinessService } from '@app/_services/business.service';
 import { BusinessUserCredentials } from '@app/models';
 
 @Component({

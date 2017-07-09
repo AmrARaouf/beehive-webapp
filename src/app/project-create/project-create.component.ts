@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Project } from '@app/models';
-import { ProjectService } from '@app/services/project.service';
+import { ProjectService } from '@app/_services/project.service';
 
 import { UploadOutput, UploadInput, UploadFile, humanizeBytes } from 'ngx-uploader'
 
