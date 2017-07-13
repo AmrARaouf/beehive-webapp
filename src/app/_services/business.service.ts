@@ -19,7 +19,7 @@ export class BusinessService {
               private router: Router) { }
 
   signup(businessUser: BusinessUser): Promise<BusinessUser> {
-    return this.http.post(`${this.baseUrl}business/users`, JSON.stringify(businessUser), this.options)
+    return this.http.post(`${this.baseUrl}/business/signup`, JSON.stringify(businessUser), this.options)
       .toPromise()
       .then(response => response.json().data as BusinessUser)
       .catch(this.handleError);
