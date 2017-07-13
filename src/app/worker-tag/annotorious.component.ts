@@ -28,7 +28,6 @@ export class AnnotoriousComponent implements OnInit {
           width: annotation.shapes[0].geometry.width,
           height: annotation.shapes[0].geometry.height
         }
-        console.log("new label", newLabel);
         self.labelEmitter.emit(newLabel);
       });
     });
