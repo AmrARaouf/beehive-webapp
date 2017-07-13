@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>Sign Up</h1>
+    <h1>Contact Us</h1>
     <form>
       <div class="form-group">
         <label for="full_name">Full Name</label>
@@ -26,7 +26,7 @@
         <input type="text" class="form-control" name="message" id="message" [(ngModel)]="user.message" required>
       </div>
  
-      <button type="submit" class="btn btn-success" ng-submit="signup()">Submit</button>
+      <button type="submit" class="btn btn-success" (click)="signup()">Submit</button>
  
     </form>
 </div>
