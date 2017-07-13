@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 
+import { WorkerUser } from '@app/models';
+
 @Component({
   selector: 'app-worker-signup',
   templateUrl: './worker-signup.component.html',
   styles: []
 })
-export class WorkerSignupComponent implements OnInit {
+export class WorkerSignupComponent{
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+user: WorkerUser = {
+    firstName: '',
+    lastName: '',
+    Username: '',
+    email: '',
+    phone: '',
+    password: ''
+  };
 }

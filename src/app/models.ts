@@ -25,3 +25,17 @@ export interface BusinessUserCredentials {
   email: string;
   password: string;
 }
+
+export interface WorkerUser {
+  firstName: string;
+  lastName: string;
+  Username: string;
+  email: string;
+  phone: string;
+  password: string;
+}
+
+export interface WorkerUserCredentials {
+  Username: string;
+  password: string;
+}
