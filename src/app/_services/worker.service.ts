@@ -1,21 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Headers, RequestOptions, Http } from '@angular/http';
-import { Router }   from '@angular/router';
+import { Router } from '@angular/router';
 
 import 'rxjs/add/operator/toPromise';
 
 import { environment } from '@env/environment';
 import { WorkerUser, WorkerUserCredentials } from '@app/models'
 import { WorkerLoginComponent } from '@app/worker-login/worker-login.component'
+
 @Injectable()
 export class WorkerService {
-
   private headers = new Headers({ 'Content-Type': 'application/json' });
   private options = new RequestOptions({ headers: this.headers, withCredentials: true });
   private baseUrl = environment.apiUrl;
 
-  constructor(private http: Http,
-              private router: Router) { }
+  constructor(private http: Http) { }
 
   signup(workerUser: WorkerUser): Promise<WorkerUser> {
     return this.http.post(`${this.baseUrl}worker/users`, JSON.stringify(workerUser), this.options)
@@ -27,9 +26,7 @@ export class WorkerService {
   login(workerUserCredentials: WorkerUserCredentials): Promise<WorkerUser> {
     return this.http.post(`${this.baseUrl}/worker/login`, JSON.stringify(workerUserCredentials), this.options)
     .toPromise()
-    .then(response => {
-      response.json().data as WorkerUser;
-      this.router.navigate(['/worker-home'])})
+    .then(response => response.json().data as WorkerUser)
     .catch(this.handleError)
   }
 

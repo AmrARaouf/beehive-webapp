@@ -1,20 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 
-import { WorkerUser } from '@app/models';
+import { WorkerService } from '@app/_services/worker.service';
+import { WorkerUser, Rank } from '@app/models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-worker-signup',
   templateUrl: './worker-signup.component.html',
   styles: []
 })
-export class WorkerSignupComponent{
+export class WorkerSignupComponent {
+  // TODO: Get this from database,
+  newRank: Rank = {
+    title: 'Beginner',
+    maxPoints: 10,
+    icon: ''
+  }
 
-user: WorkerUser = {
-    firstName: '',
-    lastName: '',
-    Username: '',
+  user: WorkerUser = {
+    username: '',
     email: '',
-    phone: '',
-    password: ''
+    password: '',
+    points: 0,
+    rank: this.newRank,
+    credit: 0,
+    isReviewer: false,
+    totalAnnotationsCount: 0,
+    currentPayableCredit: 0,
+    isActivated: true
   };
+
+  constructor(private workerService: WorkerService,
+              private router: Router){ }
+
+  signup(): void {
+    this.workerService.signup(this.user).then(user  => {
+                    this.router.navigate(['/worker']);
+                });
+  }
 }

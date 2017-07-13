@@ -7,6 +7,8 @@ import 'rxjs/add/operator/toPromise';
 import { environment } from '@env/environment';
 import { BusinessUser, BusinessUserCredentials } from '@app/models'
 import { BusinessLoginComponent } from '@app/business-login/business-login.component'
+import { BusinessContactUsComponent } from '@app/business-contactus/business-contactus.component'
+
 
 @Injectable()
 export class BusinessService {
@@ -19,9 +21,9 @@ export class BusinessService {
               private router: Router) { }
 
   signup(businessUser: BusinessUser): Promise<BusinessUser> {
-    return this.http.post(`${this.baseUrl}business/users`, JSON.stringify(businessUser), this.options)
+    return this.http.post(`${this.baseUrl}/business/signup`, JSON.stringify(businessUser), this.options)
       .toPromise()
-      .then(response => response.json().data as BusinessUser)
+      .then(response => response.json() as BusinessUser)
       .catch(this.handleError);
   }
 
@@ -29,7 +31,7 @@ export class BusinessService {
     return this.http.post(`${this.baseUrl}/business/login`, JSON.stringify(businessUserCredentials), this.options)
     .toPromise()
     .then(response => {
-      response.json().data as BusinessUser;
+      response.json() as BusinessUser;
       this.router.navigate(['/projects'])})
     .catch(this.handleError)
   }

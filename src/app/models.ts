@@ -27,15 +27,26 @@ export interface BusinessUserCredentials {
 }
 
 export interface WorkerUser {
-  firstName: string;
-  lastName: string;
-  Username: string;
+  username: string;
   email: string;
-  phone: string;
   password: string;
+  points: Number;
+  rank: Rank;
+  credit: Number;
+  isReviewer: Boolean;
+  totalAnnotationsCount: Number;
+  currentPayableCredit: Number;
+  isActivated: Boolean;
 }
 
 export interface WorkerUserCredentials {
-  Username: string;
+  username: string;
   password: string;
 }
+
+export interface Rank {
+  title: string;
+  maxPoints: number;
+  icon: string;
+}
+

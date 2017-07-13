@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-
+﻿import { Component, OnInit } from '@angular/core';
 import { WorkerService } from '@app/_services/worker.service';
 import { WorkerUserCredentials } from '@app/models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-worker-login',
@@ -10,14 +10,16 @@ import { WorkerUserCredentials } from '@app/models';
 })
 export class WorkerLoginComponent {
  userCredentials: WorkerUserCredentials = {
-    Username: '',
+    username: '',
     password: ''
   }
-    constructor(private workerService: WorkerService) { }
+  
+  constructor(private workerService: WorkerService,
+              private router: Router) { }
 
   login(): void {
-    this.workerService.login(this.userCredentials).then();
+    this.workerService.login(this.userCredentials).then(user  => {
+                    this.router.navigate(['/worker']);
+                });
   }
-
-
 }
