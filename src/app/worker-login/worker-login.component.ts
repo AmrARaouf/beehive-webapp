@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styles: []
 })
 export class WorkerLoginComponent {
- userCredentials: WorkerUserCredentials = {
+  userCredentials: WorkerUserCredentials = {
     username: '',
     password: ''
   }
@@ -19,7 +19,7 @@ export class WorkerLoginComponent {
 
   login(): void {
     this.workerService.login(this.userCredentials).then(user  => {
-                    this.router.navigate(['/worker']);
-                });
+      this.router.navigate(['/worker']);
+    });
   }
 }

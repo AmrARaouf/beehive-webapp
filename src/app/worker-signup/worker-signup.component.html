@@ -33,7 +33,7 @@
         <input type="text" class="form-control" name="password" id="password" [(ngModel)]="user.password" required>
       </div>
  
-      <button type="submit" class="btn btn-success" ng-submit="signup()">Submit</button>
+      <button type="submit" class="btn btn-success" (click)="signup()">Sign Up</button>
  
     </form>
 </div>

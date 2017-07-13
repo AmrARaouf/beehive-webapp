@@ -13,19 +13,20 @@ export class BusinessService extends UserService {
 
   constructor(private http: Http) {
     super(http)
+    this.loadBusinessUser()
   }
 
   signup(businessUser: BusinessUser): Promise<BusinessUser> {
     return this.http.post(`${this.baseUrl}/business/signup`, JSON.stringify(businessUser), this.authOptions)
       .toPromise()
-      .then(response => this.handleUserAuthentication(response.json() as BusinessUser))
+      .then(response => this.handleUserAuthentication(response.json().user as BusinessUser))
       .catch(this.handleError);
   }
 
   login(businessUserCredentials: BusinessUserCredentials): Promise<BusinessUser> {
     return this.http.post(`${this.baseUrl}/business/login`, JSON.stringify(businessUserCredentials), this.authOptions)
     .toPromise()
-    .then(response => this.handleUserAuthentication(response.json() as BusinessUser))
+    .then(response => this.handleUserAuthentication(response.json().user as BusinessUser))
     .catch(this.handleError)
   }
 
@@ -33,8 +34,16 @@ export class BusinessService extends UserService {
     return this.business;
   }
 
+  private loadBusinessUser(): void {
+    var businessObject = this.loadUserObject()
+    if (businessObject) {
+      this.business = <BusinessUser>businessObject;
+    }
+  }
+
   private handleUserAuthentication(business: BusinessUser): BusinessUser {
     this.business = business
+    this.storeUserObject(business)
     return this.business
   }
 }

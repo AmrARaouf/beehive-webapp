@@ -1,8 +1,8 @@
 ﻿import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { WorkerService } from '@app/_services/worker.service';
 import { WorkerUser, Rank } from '@app/models';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-worker-signup',
@@ -31,11 +31,12 @@ export class WorkerSignupComponent {
   };
 
   constructor(private workerService: WorkerService,
-              private router: Router){ }
+              private router: Router) { }
 
   signup(): void {
+    console.log("here")
     this.workerService.signup(this.user).then(user  => {
-                    this.router.navigate(['/worker']);
-                });
+      this.router.navigate(['/worker']);
+    });
   }
 }

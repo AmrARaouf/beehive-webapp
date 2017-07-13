@@ -12,6 +12,14 @@ export abstract class UserService {
 
   constructor(http: Http) { }
 
+  protected storeUserObject(user: Object): void {
+    localStorage.setItem("beehive_user", JSON.stringify(user));
+  }
+
+  protected loadUserObject(): Object {
+    return JSON.parse(localStorage.getItem("beehive_user"));
+  }
+
   protected handleError(error: any): Promise<any> {
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);

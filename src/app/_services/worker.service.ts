@@ -13,19 +13,21 @@ export class WorkerService extends UserService {
 
   constructor(private http: Http) {
     super(http);
+    this.loadBusinessUser()
   }
 
   signup(workerUser: WorkerUser): Promise<WorkerUser> {
-    return this.http.post(`${this.baseUrl}worker/users`, JSON.stringify(workerUser), this.authOptions)
+    console.log("worker service")
+    return this.http.post(`${this.baseUrl}/worker/signup`, JSON.stringify(workerUser), this.authOptions)
       .toPromise()
-      .then(response => this.handleUserAuthentication(response.json().data as WorkerUser))
+      .then(response => this.handleUserAuthentication(response.json().user as WorkerUser))
       .catch(this.handleError);
   }
 
   login(workerUserCredentials: WorkerUserCredentials): Promise<WorkerUser> {
     return this.http.post(`${this.baseUrl}/worker/login`, JSON.stringify(workerUserCredentials), this.authOptions)
     .toPromise()
-    .then(response => this.handleUserAuthentication(response.json().data as WorkerUser))
+    .then(response => this.handleUserAuthentication(response.json().user as WorkerUser))
     .catch(this.handleError)
   }
 
@@ -33,8 +35,16 @@ export class WorkerService extends UserService {
     return this.worker;
   }
 
+  private loadBusinessUser(): void {
+    var workerObject = this.loadUserObject()
+    if (workerObject) {
+      this.worker = <WorkerUser>workerObject;
+    }
+  }
+
   private handleUserAuthentication(worker: WorkerUser): WorkerUser {
     this.worker = worker
+    this.storeUserObject(worker)
     return this.worker
   }
 }

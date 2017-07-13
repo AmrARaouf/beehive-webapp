@@ -10,6 +10,7 @@ import { ProjectDetailComponent } from '@app/project-detail/project-detail.compo
 
 import { WorkerHomeComponent } from '@app/worker-home/worker-home.component'
 import { WorkerSignupComponent } from '@app/worker-signup/worker-signup.component'
+import { WorkerLoginComponent } from '@app/worker-login/worker-login.component'
 import { WorkerTutorialComponent } from '@app/worker-tutorial/worker-tutorial.component'
 import { WorkerTagComponent } from '@app/worker-tag/worker-tag.component'
 
@@ -19,6 +20,8 @@ export const ROUTES: Routes = [
   { path: 'business/login', component: BusinessLoginComponent },
 
   { path: 'worker/signup', component: WorkerSignupComponent },
+  { path: 'worker/login', component: WorkerLoginComponent },
+  
   { path: 'worker', component: WorkerHomeComponent },
   { path: 'worker/tutorial', component: WorkerTutorialComponent },
   { path: 'worker/tag', component: WorkerTagComponent },
