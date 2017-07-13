@@ -25,3 +25,11 @@ export interface BusinessUserCredentials {
   email: string;
   password: string;
 }
+
+export interface Label {
+  name: string;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+}

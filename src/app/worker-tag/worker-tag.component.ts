@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AnnotoriousDirective } from '@app/_directives/annotorious.directive';
+import { AnnotoriousComponent } from '@app/worker-tag/annotorious.component'
+import { Label } from '@app/models'
+
 
 @Component({
   selector: 'app-tag-game',
@@ -11,6 +13,11 @@ export class WorkerTagComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  onNewLabel(label: Label): void {
+    console.log("new label in WorkerTagComponent: ", label)
   }
 
 }

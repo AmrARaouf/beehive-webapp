@@ -9,6 +9,12 @@ import { TagInputModule } from 'ng2-tag-input';
 import { NgUploaderModule } from 'ngx-uploader';
 
 import { ROUTES } from '@app/routes'
+
+import { WorkerService } from '@app/_services/worker.service'
+import { BusinessService } from '@app/_services/business.service'
+import { ProjectService } from '@app/_services/project.service';
+import { WindowRefService } from '@app/_services/window-ref.service';
+
 import { AppComponent } from '@app/app.component';
 import { HomeComponent } from '@app/home/home.component';
 import { WorkerSignupComponent } from '@app/worker-signup/worker-signup.component';
@@ -18,15 +24,11 @@ import { ProjectsComponent } from '@app/projects/projects.component';
 import { ProjectDetailComponent } from '@app/project-detail/project-detail.component';
 import { BusinessContactUsComponent } from '@app/business-contactus/business-contactus.component';
 import { BusinessLoginComponent } from '@app/business-login/business-login.component'
-
-import { WorkerService } from '@app/_services/worker.service'
-import { BusinessService } from '@app/_services/business.service'
-import { ProjectService } from '@app/_services/project.service';
 import { NavbarComponent } from '@app/navbar/navbar.component';
 import { WorkerHomeComponent } from '@app/worker-home/worker-home.component';
 import { WorkerTutorialComponent } from '@app/worker-tutorial/worker-tutorial.component';
 import { WorkerTagComponent } from '@app/worker-tag/worker-tag.component';
-import { AnnotoriousDirective } from '@app/_directives/annotorious.directive'
+import { AnnotoriousComponent } from '@app/worker-tag/annotorious.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,7 @@ import { AnnotoriousDirective } from '@app/_directives/annotorious.directive'
     WorkerHomeComponent,
     WorkerTutorialComponent,
     WorkerTagComponent,
-    AnnotoriousDirective
+    AnnotoriousComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ import { AnnotoriousDirective } from '@app/_directives/annotorious.directive'
   providers: [
     WorkerService,
     BusinessService,
-    ProjectService
+    ProjectService,
+    WindowRefService
   ],
   bootstrap: [AppComponent]
 })

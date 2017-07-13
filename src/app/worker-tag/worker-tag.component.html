@@ -1,4 +1,7 @@
 <app-navbar></app-navbar>
-<p>
-  worker-tag works!
-</p>
+<div class="container text-center">
+  <app-annotorious
+    [img]="'assets/vendor/annotorious/example/example.jpg'"
+    (tag)="onNewLabel($event)">
+  </app-annotorious>
+</div>
