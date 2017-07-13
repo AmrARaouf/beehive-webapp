@@ -4,9 +4,14 @@
     <button routerLink="new-project" class="btn btn-success btn-xl pull-right">
         <i class='glyphicon glyphicon-plus'></i> Create Project
     </button>
-    <ul>
-        <li *ngFor = "let project of projects">
-            <a [routerLink]="[project._id]">{{project.name}}</a>
-        </li>
-    </ul>
+    <div *ngIf="projects">
+        <ul>
+            <li *ngFor = "let project of projects">
+                <a [routerLink]="[project._id]">{{project.name}}</a>
+            </li>
+        </ul>
+    </div>
+    <div *ngIf="projects && projects.length == 0" class="container">
+        You have no projects yet.
+    </div>
 </div>

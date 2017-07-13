@@ -33,3 +33,27 @@ export interface Label {
   width: number;
   height: number;
 }
+
+export interface WorkerUser {
+  username: string;
+  email: string;
+  password: string;
+  points: Number;
+  rank: Rank;
+  credit: Number;
+  isReviewer: Boolean;
+  totalAnnotationsCount: Number;
+  currentPayableCredit: Number;
+  isActivated: Boolean;
+}
+
+export interface WorkerUserCredentials {
+  username: string;
+  password: string;
+}
+
+export interface Rank {
+  title: string;
+  maxPoints: number;
+  icon: string;
+}

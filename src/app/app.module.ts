@@ -22,7 +22,7 @@ import { WorkerLoginComponent } from '@app/worker-login/worker-login.component';
 import { ProjectCreateComponent } from '@app/project-create/project-create.component';
 import { ProjectsComponent } from '@app/projects/projects.component';
 import { ProjectDetailComponent } from '@app/project-detail/project-detail.component';
-import { BusinessContactUsComponent } from '@app/business-contactus/business-contactus.component';
+import { BusinessSignUpComponent } from '@app/business-signup/business-signup.component';
 import { BusinessLoginComponent } from '@app/business-login/business-login.component'
 import { NavbarComponent } from '@app/navbar/navbar.component';
 import { WorkerHomeComponent } from '@app/worker-home/worker-home.component';
@@ -39,7 +39,7 @@ import { AnnotoriousComponent } from '@app/worker-tag/annotorious.component';
     ProjectCreateComponent,
     ProjectsComponent,
     ProjectDetailComponent,
-    BusinessContactUsComponent,
+    BusinessSignUpComponent,
     BusinessLoginComponent,
     NavbarComponent,
     WorkerHomeComponent,

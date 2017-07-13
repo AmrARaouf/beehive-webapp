@@ -15,9 +15,8 @@ export class BusinessLoginComponent {
     password: ''
   }
 
-  constructor(
-    private businessService: BusinessService,
-    private router: Router) { }
+  constructor(private businessService: BusinessService,
+              private router: Router) { }
 
   login(): void {
     this.businessService.login(this.userCredentials).then( user => {

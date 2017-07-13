@@ -4,11 +4,12 @@ import { BusinessUser } from '@app/models';
 import { BusinessService } from '@app/_services/business.service';
 
 @Component({
-  selector: 'app-business-contactus',
-  templateUrl: './business-contactus.component.html',
+  selector: 'app-business-signup',
+  templateUrl: './business-signup.component.html',
   styles: []
 })
-export class BusinessContactUsComponent {
+
+export class BusinessSignUpComponent {
   user: BusinessUser = {
     full_name: '',
     organization: '',
@@ -18,9 +19,15 @@ export class BusinessContactUsComponent {
     message: ''
   };
 
+  formSubmitted = false;
+
   constructor(private businessService: BusinessService) { }
 
   signup(): void {
-    this.businessService.signup(this.user).then();
+    this.businessService.signup(this.user).then(user => {
+      if(user) {
+        this.formSubmitted = true
+      }
+    });
   }
 }

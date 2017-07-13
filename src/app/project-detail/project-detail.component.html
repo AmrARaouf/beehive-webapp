@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div class="container">
+<div *ngIf="project && project.name != ''" class="container">
     <h2>{{project.name}}</h2>
     <div>
         Description: {{project.description}}
@@ -11,3 +11,6 @@
         Package: {{project.package.name}}
     </div>
 </div>
+<h3 *ngIf="project && project.name == ''" class="container alert alert-warning box-msg" role="alert">
+    Project does not exist :(
+</h3>

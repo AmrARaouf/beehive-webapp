@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http, RequestOptions } from '@angular/http';
-import { Router } from '@angular/router';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -15,8 +14,7 @@ export class ProjectService {
   private projectsUrl = environment.apiUrl + '/projects';  // URL to web api
   private projects = [];
 
-  constructor(private http: Http,
-              private router: Router) { }
+  constructor(private http: Http) { }
 
   initializeProject(): Project {
     return <Project> {
