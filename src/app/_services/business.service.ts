@@ -15,8 +15,7 @@ export class BusinessService {
   private options = new RequestOptions({ headers: this.headers, withCredentials: true });
   private baseUrl = environment.apiUrl;
 
-  constructor(private http: Http,
-              private router: Router) { }
+  constructor(private http: Http) { }
 
   signup(businessUser: BusinessUser): Promise<BusinessUser> {
     return this.http.post(`${this.baseUrl}/business/signup`, JSON.stringify(businessUser), this.options)
@@ -28,9 +27,7 @@ export class BusinessService {
   login(businessUserCredentials: BusinessUserCredentials): Promise<BusinessUser> {
     return this.http.post(`${this.baseUrl}/business/login`, JSON.stringify(businessUserCredentials), this.options)
     .toPromise()
-    .then(response => {
-      response.json().data as BusinessUser;
-      this.router.navigate(['/projects'])})
+    .then(response => response.json() as BusinessUser)
     .catch(this.handleError)
   }
 
