@@ -1,4 +1,4 @@
-<div class="container">
+<div *ngIf="!formSubmitted" class="container">
     <h1>Contact Us</h1>
     <form>
       <div class="form-group">
@@ -29,4 +29,7 @@
       <button type="submit" class="btn btn-success" (click)="signup()">Submit</button>
  
     </form>
+</div>
+<div *ngIf="formSubmitted" class="container alert alert-success box-msg" role="alert">
+  <h1>Thank you for your message! We will contact you soon.</h1>
 </div>

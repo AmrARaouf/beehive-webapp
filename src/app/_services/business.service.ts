@@ -7,6 +7,8 @@ import 'rxjs/add/operator/toPromise';
 import { environment } from '@env/environment';
 import { BusinessUser, BusinessUserCredentials } from '@app/models'
 import { BusinessLoginComponent } from '@app/business-login/business-login.component'
+import { BusinessContactUsComponent } from '@app/business-contactus/business-contactus.component'
+
 
 @Injectable()
 export class BusinessService {
@@ -21,7 +23,7 @@ export class BusinessService {
   signup(businessUser: BusinessUser): Promise<BusinessUser> {
     return this.http.post(`${this.baseUrl}/business/signup`, JSON.stringify(businessUser), this.options)
       .toPromise()
-      .then(response => response.json().data as BusinessUser)
+      .then(response => response.json() as BusinessUser)
       .catch(this.handleError);
   }
 
