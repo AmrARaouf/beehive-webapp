@@ -26,12 +26,6 @@ export interface BusinessUserCredentials {
   password: string;
 }
 
-export interface Rank {
-  title: string;
-  max_points: number;
-  icon: string;
-}
-
 export interface WorkerUser {
   username: string;
   email: string;
@@ -39,14 +33,20 @@ export interface WorkerUser {
   points: Number;
   rank: Rank;
   credit: Number;
-  is_reviewer: Boolean;
-  total_annotations_count: Number;
-  current_payable_credit: Number;
-  is_activated: Boolean;
+  isReviewer: Boolean;
+  totalAnnotationsCount: Number;
+  currentPayableCredit: Number;
+  isActivated: Boolean;
 }
 
-// TODO: I think for login, we can use this interface for both type of users,
-export interface UserCredentials {
-  email: string;
+export interface WorkerUserCredentials {
+  username: string;
   password: string;
 }
+
+export interface Rank {
+  title: string;
+  maxPoints: number;
+  icon: string;
+}
+

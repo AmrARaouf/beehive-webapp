@@ -1,7 +1,8 @@
 ﻿import { Component, OnInit } from '@angular/core';
 
-import { WorkerService } from '../_services/worker.service';
-import { WorkerUser, Rank } from '../models';
+import { WorkerService } from '@app/_services/worker.service';
+import { WorkerUser, Rank } from '@app/models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-worker-signup',
@@ -12,7 +13,7 @@ export class WorkerSignupComponent {
   // TODO: Get this from database,
   newRank: Rank = {
     title: 'Beginner',
-    max_points: 10,
+    maxPoints: 10,
     icon: ''
   }
 
@@ -23,15 +24,18 @@ export class WorkerSignupComponent {
     points: 0,
     rank: this.newRank,
     credit: 0,
-    is_reviewer: false,
-    total_annotations_count: 0,
-    current_payable_credit: 0,
-    is_activated: true
+    isReviewer: false,
+    totalAnnotationsCount: 0,
+    currentPayableCredit: 0,
+    isActivated: true
   };
 
-  constructor(private workerService: WorkerService) { }
+  constructor(private workerService: WorkerService,
+              private router: Router){ }
 
   signup(): void {
-    this.workerService.signup(this.user).then();
+    this.workerService.signup(this.user).then(user  => {
+                    this.router.navigate(['/worker']);
+                });
   }
 }
