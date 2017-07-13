@@ -1,5 +1,5 @@
 <div *ngIf="!formSubmitted" class="container">
-    <h1>Contact Us</h1>
+    <h1>Sign up</h1>
     <form>
       <div class="form-group">
         <label for="full_name">Full Name</label>
@@ -17,6 +17,11 @@
       </div>
 
       <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" id="password" [(ngModel)]="user.password" required>
+      </div>
+
+      <div class="form-group">
         <label for="phone">Phone</label>
         <input type="text" class="form-control" name="phone" id="phone" [(ngModel)]="user.phone"required>
       </div>
@@ -30,6 +35,9 @@
  
     </form>
 </div>
-<div *ngIf="formSubmitted" class="container alert alert-success box-msg" role="alert">
-  <h1>Thank you for your message! We will contact you soon.</h1>
+<div *ngIf="formSubmitted">
+  <div class="container alert alert-success box-msg" role="alert">
+    <h3>Welcome to Beehive! Login now and start creating projects.</h3>
+  </div>
+  <app-business-login></app-business-login>
 </div>

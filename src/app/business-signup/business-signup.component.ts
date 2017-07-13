@@ -4,12 +4,12 @@ import { BusinessUser } from '@app/models';
 import { BusinessService } from '@app/_services/business.service';
 
 @Component({
-  selector: 'app-business-contactus',
-  templateUrl: './business-contactus.component.html',
+  selector: 'app-business-signup',
+  templateUrl: './business-signup.component.html',
   styles: []
 })
 
-export class BusinessContactUsComponent {
+export class BusinessSignUpComponent {
   user: BusinessUser = {
     full_name: '',
     organization: '',

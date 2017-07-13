@@ -7,7 +7,7 @@ import 'rxjs/add/operator/toPromise';
 import { environment } from '@env/environment';
 import { BusinessUser, BusinessUserCredentials } from '@app/models'
 import { BusinessLoginComponent } from '@app/business-login/business-login.component'
-import { BusinessContactUsComponent } from '@app/business-contactus/business-contactus.component'
+import { BusinessSignUpComponent } from '@app/business-signup/business-signup.component'
 
 
 @Injectable()
