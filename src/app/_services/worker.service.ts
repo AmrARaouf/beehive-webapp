@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 
 import { environment } from '../../environments/environment';
 import { WorkerUser, UserCredentials } from '../models'
-import { WorkerLoginComponent } from '../Worker-login/Worker-login.component'
+import { WorkerLoginComponent } from '@app/worker-login/worker-login.component'
 
 @Injectable()
 export class WorkerService {

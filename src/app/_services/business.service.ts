@@ -31,7 +31,7 @@ export class BusinessService {
     return this.http.post(`${this.baseUrl}/business/login`, JSON.stringify(businessUserCredentials), this.options)
     .toPromise()
     .then(response => {
-      response.json().data as BusinessUser;
+      response.json() as BusinessUser;
       this.router.navigate(['/projects'])})
     .catch(this.handleError)
   }
