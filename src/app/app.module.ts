@@ -22,6 +22,8 @@ import { BusinessLoginComponent } from '@app/business-login/business-login.compo
 import { WorkerService } from '@app/_services/worker.service'
 import { BusinessService } from '@app/_services/business.service'
 import { ProjectService } from '@app/_services/project.service';
+import { ImageService } from '@app/_services/image.service';
+import { PackageService } from '@app/_services/package.service';
 import { NavbarComponent } from '@app/navbar/navbar.component';
 import { WorkerHomeComponent } from '@app/worker-home/worker-home.component';
 import { WorkerTutorialComponent } from '@app/worker-tutorial/worker-tutorial.component';
@@ -57,7 +59,9 @@ import { AnnotoriousDirective } from '@app/_directives/annotorious.directive'
   providers: [
     WorkerService,
     BusinessService,
-    ProjectService
+    ProjectService,
+    ImageService,
+    PackageService
   ],
   bootstrap: [AppComponent]
 })

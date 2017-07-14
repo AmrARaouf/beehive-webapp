@@ -9,7 +9,8 @@ export interface Project {
   name: string;
   description: string;
   label_names: string[];
-  package: Package;
+  package: string;
+  images: string[];
 }
 
 export interface BusinessUser {
@@ -48,5 +49,10 @@ export interface Rank {
   title: string;
   maxPoints: number;
   icon: string;
+}
+
+export interface Image {
+  path: string;
+  _id: string;
 }
 

@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 
 import { Project } from '@app/models';
 import { ProjectService } from '@app/_services/project.service';
+import { ImageService } from '@app/_services/image.service';
+import { PackageService } from '@app/_services/package.service';
 
 import { UploadOutput, UploadInput, UploadFile, humanizeBytes } from 'ngx-uploader'
 
@@ -14,6 +16,8 @@ import { UploadOutput, UploadInput, UploadFile, humanizeBytes } from 'ngx-upload
 export class ProjectCreateComponent implements OnInit {  
   constructor(
     private projectService: ProjectService,
+    private imageService: ImageService,
+    private packageService: PackageService,
     private router: Router) { }
 
   private numberOfTabs = 6;
