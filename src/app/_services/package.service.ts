@@ -22,6 +22,7 @@ export class PackageService extends UserService {
             .get(this.url, this.options)
             .toPromise()
             .then(res => {
+                // TODO: Do we need the next line?,
                 this.packages = res.json().packages;
                 return res.json().packages as Package[]
             })

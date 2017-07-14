@@ -11,6 +11,7 @@ export interface Project {
   label_names: string[];
   package: string;
   images: string[];
+  number_of_annotations: Number;
 }
 
 export interface BusinessUser {
