@@ -53,7 +53,7 @@ export class ProjectCreateComponent implements OnInit {
     else {
       console.log(this.project);
       this.project.labelNames = this.items;
-      this.projectService.createProject(this.project).then(res => this.router.navigate([this.project._id]))
+      this.projectService.createProject(this.project).then(res => this.router.navigate(['/projects/' + res._id]))
     }
   }
 
@@ -65,17 +65,17 @@ export class ProjectCreateComponent implements OnInit {
   }
 
   onBronzePack(): void {
-    this.project.package = this.packages[0]._id;
+    this.project.package = this.packages[0];
     this.nextTab();
   }
 
   onSilverPack(): void {
-    this.project.package = this.packages[1]._id;
+    this.project.package = this.packages[1];
     this.nextTab();
   }
 
   onGoldPack(): void {
-    this.project.package = this.packages[2]._id;
+    this.project.package = this.packages[2];
     this.nextTab();
   }
 

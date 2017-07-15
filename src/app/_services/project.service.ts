@@ -22,7 +22,6 @@ export class ProjectService extends BaseService {
       name: '',
       description: '',
       labelNames: [],
-      package: '',
       imagesPath: '',
       tutorialPath: ''
     }
@@ -32,7 +31,7 @@ export class ProjectService extends BaseService {
     return this.http
       .post(this.projectsUrl, JSON.stringify(project), this.authOptions)
       .toPromise()
-      .then(res => res.json().data as Project)
+      .then(res => res.json() as Project)
       .catch(this.handleError);
   }
 
