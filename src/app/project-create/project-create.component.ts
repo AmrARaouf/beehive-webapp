@@ -50,7 +50,7 @@ export class ProjectCreateComponent implements OnInit {
       this.project.labelNames = this.items;
       this.project.imagesPath = this.datasetFileName;
       this.project.tutorialPath = this.tutorialFileName;
-      this.projectService.create(this.project).then(res => this.router.navigate(['/project-detail']))
+      this.projectService.createProject(this.project).then(res => this.router.navigate([this.project._id]))
     }
   }
 
