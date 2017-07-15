@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { WorkerService } from '@app/_services/worker.service'
+import { WorkerUser } from '@app/models'
 
 @Component({
   selector: 'app-worker-home',
@@ -12,7 +13,8 @@ export class WorkerHomeComponent implements OnInit {
   constructor(private workerService: WorkerService) { }
 
   ngOnInit() {
-    console.log(this.workerService.getCurrentUser())
+    var currUser: WorkerUser = this.workerService.getCurrentUser()
+    console.log("current user: ", currUser)
   }
 
 }

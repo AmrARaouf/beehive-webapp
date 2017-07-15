@@ -1,21 +1,22 @@
 export interface Package {
   _id?: string;
   name: string;
-  max_storage: number;
+  maxStorage: number;
 }
 
 export interface Project {
   _id?: string;
   name: string;
   description: string;
-  label_names: string[];
-  package: string;
   images: string[];
-  number_of_annotations: Number;
+  numberOfAnnotations: number;
+  labelNames: string[];
+  package: Package;
 }
 
 export interface BusinessUser {
-  full_name: string;
+  _id?: string;
+  fullName: string;
   organization: string;
   email: string;
   phone: string;
@@ -24,11 +25,13 @@ export interface BusinessUser {
 }
 
 export interface BusinessUserCredentials {
+  _id?: string;
   email: string;
   password: string;
 }
 
 export interface Label {
+  _id?: string;
   name: string;
   x: number;
   y: number;
@@ -37,24 +40,27 @@ export interface Label {
 }
 
 export interface WorkerUser {
+  _id?: string;
   username: string;
   email: string;
   password: string;
-  points: Number;
+  points: number;
   rank: Rank;
-  credit: Number;
-  isReviewer: Boolean;
-  totalAnnotationsCount: Number;
-  currentPayableCredit: Number;
-  isActivated: Boolean;
+  credit: number;
+  isReviewer: boolean;
+  totalAnnotationsCount: number;
+  currentPayableCredit: number;
+  isActivated: boolean;
 }
 
 export interface WorkerUserCredentials {
+  _id?: string;
   username: string;
   password: string;
 }
 
 export interface Rank {
+  _id?: string;
   title: string;
   maxPoints: number;
   icon: string;
