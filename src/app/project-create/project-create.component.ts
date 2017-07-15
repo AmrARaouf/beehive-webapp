@@ -41,10 +41,12 @@ export class ProjectCreateComponent implements OnInit {
   }
     
   nextTab(): void {
+    console.log(this.activeTab);
     if (this.activeTab < this.numberOfTabs) {
       this.activeTab++;
     }
-    if (this.activeTab+1 == this.numberOfTabs) {
+    else {
+      console.log('i am here,');
       this.project.labelNames = this.items;
       this.project.imagesPath = this.datasetFileName;
       this.project.tutorialPath = this.tutorialFileName;
