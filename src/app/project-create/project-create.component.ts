@@ -51,9 +51,8 @@ export class ProjectCreateComponent implements OnInit {
         this.nextButtonText = this.createText;
     }
     else {
+      console.log(this.project);
       this.project.labelNames = this.items;
-      this.project.imagesPath = this.datasetFileName;
-      this.project.tutorialPath = this.tutorialFileName;
       this.projectService.create(this.project).then(res => this.router.navigate(['/project-detail']))
     }
   }
@@ -83,12 +82,14 @@ export class ProjectCreateComponent implements OnInit {
   onDatasetUploadOutput(output: UploadOutput): void {
     if (output.file) {
       this.datasetFileName = output.file.name;
+      this.project.imagesPath = this.datasetFileName;
     }
   }
 
   onTutorialUpload(output: UploadOutput): void {
     if (output.file) {
       this.tutorialFileName = output.file.name;
+      this.project.tutorialPath = this.tutorialFileName;
     }
   }
 }
