@@ -19,9 +19,12 @@ export class ProjectCreateComponent implements OnInit {
     private router: Router) { }
 
   private numberOfTabs = 6;
+  private createText = 'Create';
+  private nextText = 'Next';
   activeTab: number = 1;
   datasetFileName: string;
   tutorialFileName: string;
+  nextButtonText: string;
 
   project: Project;
   // TODO: update html to get packages from this,
@@ -30,6 +33,7 @@ export class ProjectCreateComponent implements OnInit {
   items: string[] = ['Person','Car'];
 
   ngOnInit(): void {
+    this.nextButtonText = 'Next';
     this.project = this.projectService.initializeProject();
     this.packageService.getPackages().then(packages => {
       this.packages = packages
@@ -41,12 +45,12 @@ export class ProjectCreateComponent implements OnInit {
   }
     
   nextTab(): void {
-    console.log(this.activeTab);
     if (this.activeTab < this.numberOfTabs) {
       this.activeTab++;
+      if (this.activeTab == this.numberOfTabs)
+        this.nextButtonText = this.createText;
     }
     else {
-      console.log('i am here,');
       this.project.labelNames = this.items;
       this.project.imagesPath = this.datasetFileName;
       this.project.tutorialPath = this.tutorialFileName;
@@ -58,18 +62,22 @@ export class ProjectCreateComponent implements OnInit {
     if (this.activeTab > 1) {
       this.activeTab--;
     }
+    this.nextButtonText = this.nextText;
   }
 
   onBronzePack(): void {
     this.project.package = this.packages[0]._id;
+    this.nextTab();
   }
 
   onSilverPack(): void {
     this.project.package = this.packages[1]._id;
+    this.nextTab();
   }
 
   onGoldPack(): void {
     this.project.package = this.packages[2]._id;
+    this.nextTab();
   }
 
   onDatasetUploadOutput(output: UploadOutput): void {
