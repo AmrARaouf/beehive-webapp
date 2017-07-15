@@ -1,30 +1,29 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http, RequestOptions } from '@angular/http';
+import { Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
 import { Project, Package } from '@app/models';
 import { environment } from '@env/environment';
+import { BaseService } from './base.service';
 
 @Injectable()
-export class ProjectService {
+export class ProjectService extends BaseService {
 
-  private headers = new Headers({'Content-Type': 'application/json'});
-  private options = new RequestOptions({ headers: this.headers, withCredentials: true });
-  private projectsUrl = environment.apiUrl + '/projects';  // URL to web api
+  private projectsUrl = this.baseUrl + '/projects';  // URL to web api
   private projects = [];
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) {
+    super(http);
+  }
 
   initializeProject(): Project {
     return <Project> {
       name: '',
       description: '',
       label_names: [],
-      package: <Package> {
-        name: '',
-        max_storage: 0
-      }
+      package: '',
+      images: []
     }
   }
 
@@ -34,7 +33,8 @@ export class ProjectService {
           name: project.name,
           description: project.description,
           label_names: [project.label_names],
-          package: project.package
+          package: project.package,
+          images: [project.images]
         }), this.options)
       .toPromise()
       .then(res => res.json().data as Project)
@@ -61,10 +61,5 @@ export class ProjectService {
       .toPromise()
       .then(res => res.json().project as Project)
     }
-  }
-
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
   }
 }
