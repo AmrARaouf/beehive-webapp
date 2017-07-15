@@ -5,10 +5,10 @@ import 'rxjs/add/operator/toPromise';
 
 import { Package } from '@app/models';
 import { environment } from '@env/environment';
-import { UserService } from './user.service';
+import { BaseService } from './base.service';
 
 @Injectable()
-export class PackageService extends UserService {
+export class PackageService extends BaseService {
 
   private url = this.baseUrl + '/business/packages';  // URL to web api
   private packages = [];
