@@ -16,7 +16,7 @@ export interface Project {
 }
 
 export interface BusinessUser {
-  full_name: string;
+  fullName: string;
   organization: string;
   email: string;
   phone: string;
