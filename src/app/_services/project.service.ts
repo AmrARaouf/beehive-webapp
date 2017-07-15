@@ -21,21 +21,16 @@ export class ProjectService extends BaseService {
     return <Project> {
       name: '',
       description: '',
-      label_names: [],
+      labelNames: [],
       package: '',
-      images: []
+      imagesPath: '',
+      tutorialPath: ''
     }
   }
 
   create(project: Project): Promise<Project> {
     return this.http
-      .post(this.projectsUrl, JSON.stringify({
-          name: project.name,
-          description: project.description,
-          label_names: [project.label_names],
-          package: project.package,
-          images: [project.images]
-        }), this.options)
+      .post(this.projectsUrl, JSON.stringify(project), this.options)
       .toPromise()
       .then(res => res.json().data as Project)
       .catch(this.handleError);

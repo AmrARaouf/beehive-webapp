@@ -52,7 +52,7 @@
           <ul class="features">
             <li>Up to 10GB of data</li>
           </ul>
-          <button>Add to cart</button>
+          <button (click)="onBronzePack()" type="submit" class="btn btn-primary pull-right">Add to cart</button>
         </div>
 
         <div class="price_card bravo">
@@ -63,7 +63,7 @@
           <ul class="features">
             <li>Up to 50GB of data</li>
           </ul>
-          <button>Add to cart</button>
+          <button (click)="onSilverPack()" type="submit" class="btn btn-primary pull-right">Add to cart</button>
         </div>
 
         <div class="price_card charlie">
@@ -74,7 +74,7 @@
           <ul class="features">
             <li>Up to 100GB of data</li>
           </ul>
-          <button>Add to cart</button>
+          <button (click)="onGoldPack()" type="submit" class="btn btn-primary pull-right">Add to cart</button>
         </div>
 
       </div>
@@ -147,9 +147,9 @@
           <div class="form-group text-center">
             <label class="btn btn-primary upload-button">
               Choose ZIP file
-              <input type="file" accept=".zip" ngFileSelect (uploadOutput)="onDatasetUploadOutput($event)" [uploadInput]="uploadInput">
+              <input type="file" accept=".zip" ngFileSelect (uploadOutput)="onTutorialUpload($event)" [uploadInput]="uploadInput">
             </label>
-            <div class="file-name">{{datasetFileName}}</div>
+            <div class="file-name">{{tutorialFileName}}</div>
           </div>
         </div>
 

@@ -8,10 +8,11 @@ export interface Project {
   _id?: string;
   name: string;
   description: string;
-  label_names: string[];
+  labelNames: string[];
   package: string;
-  images: string[];
-  number_of_annotations: Number;
+  imagesPath: string;
+  tutorialPath: string;
+  numberOfAnnotations: Number;
 }
 
 export interface BusinessUser {
