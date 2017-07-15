@@ -12,7 +12,7 @@ export interface Project {
   package: string;
   imagesPath: string;
   tutorialPath: string;
-  numberOfAnnotations: Number;
+  numberOfAnnotations: number;
 }
 
 export interface BusinessUser {
