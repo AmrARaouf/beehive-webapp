@@ -11,7 +11,7 @@ import { BusinessService } from '@app/_services/business.service';
 
 export class BusinessSignUpComponent {
   user: BusinessUser = {
-    full_name: '',
+    fullName: '',
     organization: '',
     email: '',
     phone: '',

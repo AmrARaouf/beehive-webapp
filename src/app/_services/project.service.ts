@@ -21,21 +21,16 @@ export class ProjectService extends BaseService {
     return <Project> {
       name: '',
       description: '',
-      label_names: [],
+      labelNames: [],
       package: '',
-      images: []
+      imagesPath: '',
+      tutorialPath: ''
     }
   }
 
-  create(project: Project): Promise<Project> {
+  createProject(project: Project): Promise<Project> {
     return this.http
-      .post(this.projectsUrl, JSON.stringify({
-          name: project.name,
-          description: project.description,
-          label_names: [project.label_names],
-          package: project.package,
-          images: [project.images]
-        }), this.options)
+      .post(this.projectsUrl, JSON.stringify(project), this.authOptions)
       .toPromise()
       .then(res => res.json().data as Project)
       .catch(this.handleError);
@@ -43,7 +38,7 @@ export class ProjectService extends BaseService {
 
   getProjects(): Promise<Project[]> {
     return this.http
-      .get(this.projectsUrl, this.options)
+      .get(this.projectsUrl, this.authOptions)
       .toPromise()
       .then(res => {this.projects = res.json().projects;
                     return res.json().projects as Project[]})
@@ -57,7 +52,7 @@ export class ProjectService extends BaseService {
       });
     } else {
       return this.http
-      .get(`${this.projectsUrl}/${projectId}`, this.options)
+      .get(`${this.projectsUrl}/${projectId}`, this.authOptions)
       .toPromise()
       .then(res => res.json().project as Project)
     }

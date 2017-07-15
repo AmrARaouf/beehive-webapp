@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 
 import { Project, Image, Package } from '@app/models';
 import { ProjectService } from '@app/_services/project.service';
-import { ImageService } from '@app/_services/image.service';
 import { PackageService } from '@app/_services/package.service';
 
 import { UploadOutput, UploadInput, UploadFile, humanizeBytes } from 'ngx-uploader'
@@ -16,22 +15,25 @@ import { UploadOutput, UploadInput, UploadFile, humanizeBytes } from 'ngx-upload
 export class ProjectCreateComponent implements OnInit {  
   constructor(
     private projectService: ProjectService,
-    private imageService: ImageService,
     private packageService: PackageService,
     private router: Router) { }
 
   private numberOfTabs = 6;
+  private createText = 'Create';
+  private nextText = 'Next';
   activeTab: number = 1;
   datasetFileName: string;
+  tutorialFileName: string;
+  nextButtonText: string;
 
   project: Project;
   // TODO: update html to get packages from this,
   packages: Package[];
-  images: Image[];
-  imageIds: string[];
+  
   items: string[] = ['Person','Car'];
 
   ngOnInit(): void {
+    this.nextButtonText = 'Next';
     this.project = this.projectService.initializeProject();
     this.packageService.getPackages().then(packages => {
       this.packages = packages
@@ -45,15 +47,13 @@ export class ProjectCreateComponent implements OnInit {
   nextTab(): void {
     if (this.activeTab < this.numberOfTabs) {
       this.activeTab++;
+      if (this.activeTab == this.numberOfTabs)
+        this.nextButtonText = this.createText;
     }
-    if (this.activeTab+1 == this.numberOfTabs) {
-      // Upload all images and get their ids,
-      for (var image of this.images) {
-        this.imageService.create(image).then(res => this.imageIds.push(res._id));
-      }
-      // Once all images are uploaded to database, create project,
-      this.project.images = this.imageIds;
-      this.projectService.create(this.project).then(res => this.router.navigate(['/project-detail']))
+    else {
+      console.log(this.project);
+      this.project.labelNames = this.items;
+      this.projectService.createProject(this.project).then(res => this.router.navigate([this.project._id]))
     }
   }
 
@@ -61,13 +61,35 @@ export class ProjectCreateComponent implements OnInit {
     if (this.activeTab > 1) {
       this.activeTab--;
     }
+    this.nextButtonText = this.nextText;
+  }
+
+  onBronzePack(): void {
+    this.project.package = this.packages[0]._id;
+    this.nextTab();
+  }
+
+  onSilverPack(): void {
+    this.project.package = this.packages[1]._id;
+    this.nextTab();
+  }
+
+  onGoldPack(): void {
+    this.project.package = this.packages[2]._id;
+    this.nextTab();
   }
 
   onDatasetUploadOutput(output: UploadOutput): void {
     if (output.file) {
       this.datasetFileName = output.file.name;
-      // TODO: Populate images array here,
+      this.project.imagesPath = this.datasetFileName;
     }
   }
 
+  onTutorialUpload(output: UploadOutput): void {
+    if (output.file) {
+      this.tutorialFileName = output.file.name;
+      this.project.tutorialPath = this.tutorialFileName;
+    }
+  }
 }
