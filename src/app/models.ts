@@ -72,3 +72,12 @@ export interface Image {
   path: string;
   _id: string;
 }
+
+export interface Activity {
+  _id?: string;
+  annotatedImageCount: number;
+  credit: number;
+  timestamp: Date
+  project: Project;
+  workerUser: WorkerUser;
+}

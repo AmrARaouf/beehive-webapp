@@ -10,7 +10,74 @@
     <div>
         Package: {{project.package.name}}
     </div>
-</div>
+    <form class="section-margin">
+        <ul class="nav nav-tabs nav-justified">
+            <li role="presentation" [class.active]="activeTab == 1"><a data-toggle="tab" href="#section-1">Annotators</a></li>
+            <li role="presentation" [class.active]="activeTab == 2"><a data-toggle="tab" href="#section-2">Images</a></li>
+        </ul>
+
+        <div class="tab-content border">
+            <!-- Annotator tab -->
+            <section id="section-1" class="tab-pane fade" [class.in]="activeTab == 1" [class.active]="activeTab == 1">
+
+            <div class="row" class="test">
+                <div>
+                    <label>Select Annotator:  </label>
+                    <select (change)="onChange($event.target.value)" name="annotationIds">
+                        <option *ngFor="let activity of activities" >{{activity.id}}</option>
+                    </select>
+                </div>
+                <div *ngIf="selectedActivity">
+                    <h2>{{selectedActivity.id}} details!</h2>
+                    <div><label>Images annotaed:  </label>{{selectedActivity.activity.annotatedImageCount}}</div>
+                    <div><label>Last Updated:  </label>{{selectedActivity.activity.timestamp}}</div>
+                </div>
+            </div>
+            </section>
+            <!-- End: Annotator tab -->
+
+            <!-- Package tab -->
+            <section id="section-2" class="tab-pane fade" [class.in]="activeTab == 2" [class.active]="activeTab == 2">
+            <div id="pricing">
+
+                <div class="price_card alpha">
+                <div class="header">
+                    <span class="price">$500</span>
+                    <span class="name">Bronze Pack</span>
+                </div>
+                <ul class="features">
+                    <li>Up to 10GB of data</li>
+                </ul>
+                <button (click)="onBronzePack()" type="submit" class="btn btn-primary pull-right">Add to cart</button>
+                </div>
+
+                <div class="price_card bravo">
+                <div class="header">
+                    <span class="price">$1000</span>
+                    <span class="name">Silver Pack</span>
+                </div>
+                <ul class="features">
+                    <li>Up to 50GB of data</li>
+                </ul>
+                <button (click)="onSilverPack()" type="submit" class="btn btn-primary pull-right">Add to cart</button>
+                </div>
+
+                <div class="price_card charlie">
+                <div class="header">
+                    <span class="price">$2000</span>
+                    <span class="name">Gold Pack</span>
+                </div>
+                <ul class="features">
+                    <li>Up to 100GB of data</li>
+                </ul>
+                <button (click)="onGoldPack()" type="submit" class="btn btn-primary pull-right">Add to cart</button>
+                </div>
+            </div>
+            </section>
+            <!-- End: Package tab -->
+            </div>
+        </form>
+        </div>
 <h3 *ngIf="project && project.name == ''" class="container alert alert-warning box-msg" role="alert">
     Project does not exist :(
 </h3>
