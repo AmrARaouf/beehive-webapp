@@ -53,7 +53,7 @@ export class ProjectCreateComponent implements OnInit {
     else {
       console.log(this.project);
       this.project.labelNames = this.items;
-      this.projectService.create(this.project).then(res => this.router.navigate(['/project-detail']))
+      this.projectService.createProject(this.project).then(res => this.router.navigate([this.project._id]))
     }
   }
 
