@@ -20,8 +20,6 @@ export class ProjectDetailComponent {
         private activatedRoute: ActivatedRoute) { }
 
     ngOnInit() {
-        // this.activityIds.push(1);
-        // this.activityIds.push(2);
         // this.project = this.projectService.initializeProject();
         // this.activatedRoute.params.subscribe((params: Params) => {
         //     let projectId = params['id'];
@@ -39,6 +37,7 @@ export class ProjectDetailComponent {
 
     onChange(activity) : void {
         this.selectedActivity = this.activities[activity-1];
+        console.log(this.selectedActivity);
     }
 }
 

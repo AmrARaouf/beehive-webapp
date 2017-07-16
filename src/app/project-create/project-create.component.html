@@ -115,17 +115,13 @@
                        [modelAsStrings]="true"
                        [ngModelOptions]="{standalone: true}">
             </tag-input>
-        </div>
-        <div class="form-group">
-          
-          <select class="form-control" id="sel1">
-           <option hidden >Number of Annotators</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-          </select>
-        </div>
+          </div>
+          <div class="form-group">
+            <select (change)="onChange($event.target.value)" name="annotationIds" class="form-control">
+              <option hidden>Number of Annotators</option>
+              <option *ngFor="let annotator of annotators" >{{annotator}}</option>
+            </select>
+          </div>
         </div>
 
         <div class="col-sm-5">

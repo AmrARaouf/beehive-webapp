@@ -25,7 +25,8 @@ export class ProjectCreateComponent implements OnInit {
   datasetFileName: string;
   tutorialFileName: string;
   nextButtonText: string;
-
+  annotators: number[] = [1, 2, 3, 4];
+ 
   project: Project;
   // TODO: update html to get packages from this,
   packages: Package[];
@@ -33,6 +34,7 @@ export class ProjectCreateComponent implements OnInit {
   items: string[] = ['Person','Car'];
 
   ngOnInit(): void {
+    console.log(this.annotators);
     this.nextButtonText = 'Next';
     this.project = this.projectService.initializeProject();
     this.packageService.getPackages().then(packages => {
@@ -43,7 +45,11 @@ export class ProjectCreateComponent implements OnInit {
   onSelect(): void {
     console.log(this.items);
   }
-    
+  
+  onChange(annotator) : void {
+    this.project.numberOfAnnotations = annotator;
+  }
+
   nextTab(): void {
     if (this.activeTab < this.numberOfTabs) {
       this.activeTab++;

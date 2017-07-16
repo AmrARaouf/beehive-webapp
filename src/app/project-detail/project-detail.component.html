@@ -23,14 +23,15 @@
             <div class="row" class="test">
                 <div>
                     <label>Select Annotator:  </label>
-                    <select (change)="onChange($event.target.value)" name="annotationIds">
+                    <select (change)="onChange($event.target.value)" name="annotationIds" >
                         <option *ngFor="let activity of activities" >{{activity.id}}</option>
                     </select>
                 </div>
                 <div *ngIf="selectedActivity">
-                    <h2>{{selectedActivity.id}} details!</h2>
+                    <h2>Annotator {{selectedActivity.id}} details</h2>
                     <div><label>Images annotaed:  </label>{{selectedActivity.activity.annotatedImageCount}}</div>
                     <div><label>Last Updated:  </label>{{selectedActivity.activity.timestamp}}</div>
+                    <div><label>Annotator Active:  </label>{{selectedActivity.activity.workerUser.isActivated}}</div>
                 </div>
             </div>
             </section>
