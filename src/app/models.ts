@@ -11,9 +11,7 @@ export interface Project {
   images: string[];
   numberOfAnnotations: number;
   labelNames: string[];
-  package: Package;
-  imagesPath: string;
-  tutorialPath: string;
+  package: string;
 }
 
 export interface BusinessUser {

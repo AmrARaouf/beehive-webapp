@@ -22,8 +22,9 @@ export class ProjectService extends BaseService {
       name: '',
       description: '',
       labelNames: [],
-      imagesPath: '',
-      tutorialPath: ''
+      numberOfAnnotations: 0,
+      images: [],
+      package: ''
     }
   }
 
@@ -45,7 +46,7 @@ export class ProjectService extends BaseService {
 
   getProject(projectId: string): Promise<Project> {
     var project = this.projects.find(project => project._id == projectId)
-    if(project) {
+    if (project) {
       return new Promise<Project>((resolve, reject) => {
         resolve(project);
       });
@@ -69,5 +70,13 @@ export class ProjectService extends BaseService {
       .get(`${this.projectsUrl}/${projectId}/activities/${activityId}`, this.authOptions)
       .toPromise()
       .then(res => res.json().activities as Activity)
+
+    }
+
+  dispatchProject(): Promise<Project> {
+    return this.http
+    .get(`${this.projectsUrl}/dispatch`, this.authOptions)
+    .toPromise()
+    .then(res => res.json().project as Project)
   }
 }
