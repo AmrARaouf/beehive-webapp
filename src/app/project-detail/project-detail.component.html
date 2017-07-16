@@ -28,10 +28,24 @@
                     </select>
                 </div>
                 <div *ngIf="selectedActivity">
-                    <h2>Annotator {{selectedActivity.id}} details</h2>
-                    <div><label>Images annotaed:  </label>{{selectedActivity.activity.annotatedImageCount}}</div>
-                    <div><label>Last Updated:  </label>{{selectedActivity.activity.timestamp}}</div>
-                    <div><label>Annotator Active:  </label>{{selectedActivity.activity.workerUser.isActivated}}</div>
+                    <table>
+                        <tr>
+                            <td> Annotator </td>
+                            <td>{{selectedActivity.id}} </td>
+                        </tr>
+                        <tr>
+                            <td><label>Images annotaed</label></td>
+                            <td>{{selectedActivity.activity.annotatedImageCount}} </td>
+                        </tr>
+                        <tr>
+                            <td><label>Last Updated</label></td>
+                            <td>{{selectedActivity.activity.timestamp}} </td>
+                        </tr>
+                        <tr>
+                            <td><label>Annotator Active:  </label></td>
+                            <td>{{selectedActivity.activity.workerUser.isActivated}} </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
             </section>
