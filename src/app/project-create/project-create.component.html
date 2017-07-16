@@ -13,9 +13,9 @@
     <li role="presentation" [class.active]="activeTab == 3" (click)="onTabChange(3)"><a data-toggle="tab" href="#section-3">Dataset</a></li>
     <li role="presentation" [class.active]="activeTab == 4" (click)="onTabChange(4)"><a data-toggle="tab" href="#section-4">Annotations</a></li>
     <li role="presentation" [class.active]="activeTab == 5" (click)="onTabChange(5)"><a data-toggle="tab" href="#section-5">Tutorial</a></li>
-    <li role="presentation" [class.active]="activeTab == 6" (click)="onTabChange(6)"><a data-toggle="tab" href="#section-6">Payment</a></li>
   </ul>
 
+  
   <div class="tab-content border">
     <!-- Details tab -->
     <section id="section-1" class="tab-pane fade" [class.in]="activeTab == 1" [class.active]="activeTab == 1">
@@ -159,23 +159,6 @@
       </div>
     </section>
     <!-- End: Tutorial tab -->
-
-    <!-- Payment tab -->
-    <section id="section-6" class="tab-pane fade" [class.in]="activeTab == 6" [class.active]="activeTab == 6">
-      <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
-          <form>
-            <div class="form-group">
-              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" placeholder="Name">
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-    <!-- End: Payment tab -->
   </div>
   </form>
 
