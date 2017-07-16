@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Project, Package } from '@app/models';
+import { Project, Package, Activity } from '@app/models';
 import { environment } from '@env/environment';
 import { BaseService } from './base.service';
 
@@ -55,5 +55,19 @@ export class ProjectService extends BaseService {
       .toPromise()
       .then(res => res.json().project as Project)
     }
+  }
+
+  getProjectActivities(projectId: string): Promise<Activity[]> {
+    return this.http
+      .get(`${this.projectsUrl}/${projectId}/activities`, this.authOptions)
+      .toPromise()
+      .then(res => res.json().activities as Activity[])
+  }
+
+    getProjectActivity(projectId: string, activityId: string): Promise<Activity> {
+    return this.http
+      .get(`${this.projectsUrl}/${projectId}/activities/${activityId}`, this.authOptions)
+      .toPromise()
+      .then(res => res.json().activities as Activity)
   }
 }

@@ -1,0 +1,161 @@
+div.tab-content.border {
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+section {
+  padding: 48px 24px;
+}
+
+.tab-content .border-right {
+  border-right: 1px solid #ddd;
+}
+
+div.tab-buttons button {
+  margin: 0px 12px;
+}
+
+h4.info-header {
+  margin-top: 0px;
+  margin-bottom: 12px;
+}
+
+.nav-tabs a {
+  color: #bbb;
+}
+
+.fa-info-circle {
+  color: #ffc300;
+}
+
+#pricing {
+	width: 989px;
+	margin: auto;
+	font-family: 'Open Sans', Helvetica;
+}
+
+.price_card{
+	width: 300px;
+	background: rgb(255, 255, 255);
+	display: inline-table;
+	top: 0;
+}
+.price_card:not(:last-child){
+	margin-right: 40px;
+}
+.header{
+	color: rgb(255, 255, 255);
+}
+.alpha .header{
+	background: #cd7f32;
+}
+.bravo .header{
+	background: #C0C0C0;
+}
+.charlie .header{
+	background: #FFD700;
+}
+.price{
+	width: 100%;
+	font-size: 60px;
+	font-weight: 300;
+	display: block;
+	text-align: center;
+	padding: 30px 0 10px;
+}
+.name{
+	width: 100%;
+	font-size: 15px;
+	font-weight: 700;
+	display: block;
+	text-align: center;
+	padding: 0 0 30px;
+}
+.features{
+	list-style: none;
+	text-align: center;
+	color: rgb(138, 138, 138);
+	margin: 0;
+	padding: 0;
+}
+.features li{
+	margin: 0 35px;
+	padding: 20px 15px;
+	width: 200px;
+}
+.features li:not(:last-child){
+	border: 1px solid rgb(242, 242, 242);
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+}
+
+
+.alpha button{
+	color: rgb(255, 255, 255);
+	border: 0;
+	border-radius: 5px;
+	height: 40px;
+	width: 200px;
+	display: block;
+	font-weight: 700;
+	font-size: 15px;
+	text-transform: uppercase;
+	margin: 20px auto 35px;
+	background: #cd7f32;
+}
+.bravo button{
+	color: rgb(255, 255, 255);
+	border: 0;
+	border-radius: 5px;
+	height: 40px;
+	width: 200px;
+	display: block;
+	font-weight: 700;
+	font-size: 15px;
+	text-transform: uppercase;
+	margin: 20px auto 35px;
+	background: #C0C0C0;
+}
+.charlie button{
+	color: rgb(255, 255, 255);
+	border: 0;
+	border-radius: 5px;
+	height: 40px;
+	width: 200px;
+	display: block;
+	font-weight: 700;
+	font-size: 15px;
+	text-transform: uppercase;
+	margin: 20px auto 35px;
+	background: #FFD700;
+}
+
+.tip{
+	font-§n: 10px 5px;
+}
+
+.file-name {
+  margin-top: 21px;
+  font-weight: bold;
+}
+
+label.upload-button input {
+  display: none;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
