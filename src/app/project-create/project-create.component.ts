@@ -49,7 +49,15 @@ export class ProjectCreateComponent implements OnInit {
   onChange(annotator) : void {
     this.project.numberOfAnnotations = annotator;
   }
-
+  
+  onTabChange(tabIndex) : void {
+    console.log(tabIndex);
+    this.activeTab = tabIndex;
+    if (this.activeTab == this.numberOfTabs)
+      this.nextButtonText = this.createText;
+    else
+      this.nextButtonText = this.nextText;
+  }
   nextTab(): void {
     if (this.activeTab < this.numberOfTabs) {
       this.activeTab++;
@@ -70,18 +78,9 @@ export class ProjectCreateComponent implements OnInit {
     this.nextButtonText = this.nextText;
   }
 
-  onBronzePack(): void {
-    this.project.package = this.packages[0];
-    this.nextTab();
-  }
-
-  onSilverPack(): void {
-    this.project.package = this.packages[1];
-    this.nextTab();
-  }
-
-  onGoldPack(): void {
-    this.project.package = this.packages[2];
+  onPackageSelect(id) : void {
+    this.project.package = this.packages[id];
+    console.log(this.project.package);
     this.nextTab();
   }
 

@@ -8,12 +8,12 @@
 
   <form class="section-margin">
   <ul class="nav nav-tabs nav-justified">
-    <li role="presentation" [class.active]="activeTab == 1"><a data-toggle="tab" href="#section-1">Details</a></li>
-    <li role="presentation" [class.active]="activeTab == 2"><a data-toggle="tab" href="#section-2">Package</a></li>
-    <li role="presentation" [class.active]="activeTab == 3"><a data-toggle="tab" href="#section-3">Dataset</a></li>
-    <li role="presentation" [class.active]="activeTab == 4"><a data-toggle="tab" href="#section-4">Annotations</a></li>
-    <li role="presentation" [class.active]="activeTab == 5"><a data-toggle="tab" href="#section-5">Tutorial</a></li>
-    <li role="presentation" [class.active]="activeTab == 6"><a data-toggle="tab" href="#section-6">Payment</a></li>
+    <li role="presentation" [class.active]="activeTab == 1" (click)="onTabChange(1)" ><a data-toggle="tab" href="#section-1">Details</a></li>
+    <li role="presentation" [class.active]="activeTab == 2" (click)="onTabChange(2)" ><a data-toggle="tab" href="#section-2">Package</a></li>
+    <li role="presentation" [class.active]="activeTab == 3" (click)="onTabChange(3)"><a data-toggle="tab" href="#section-3">Dataset</a></li>
+    <li role="presentation" [class.active]="activeTab == 4" (click)="onTabChange(4)"><a data-toggle="tab" href="#section-4">Annotations</a></li>
+    <li role="presentation" [class.active]="activeTab == 5" (click)="onTabChange(5)"><a data-toggle="tab" href="#section-5">Tutorial</a></li>
+    <li role="presentation" [class.active]="activeTab == 6" (click)="onTabChange(6)"><a data-toggle="tab" href="#section-6">Payment</a></li>
   </ul>
 
   <div class="tab-content border">
@@ -52,7 +52,7 @@
           <ul class="features">
             <li>Up to 10GB of data</li>
           </ul>
-          <button (click)="onBronzePack()" type="submit" class="btn btn-primary pull-right">Add to cart</button>
+          <button (click)="onPackageSelect(0)" type="submit" class="btn btn-primary pull-right">Add to cart</button>
         </div>
 
         <div class="price_card bravo">
@@ -63,7 +63,7 @@
           <ul class="features">
             <li>Up to 50GB of data</li>
           </ul>
-          <button (click)="onSilverPack()" type="submit" class="btn btn-primary pull-right">Add to cart</button>
+          <button (click)="onPackageSelect(1)" type="submit" class="btn btn-primary pull-right">Add to cart</button>
         </div>
 
         <div class="price_card charlie">
@@ -74,7 +74,7 @@
           <ul class="features">
             <li>Up to 100GB of data</li>
           </ul>
-          <button (click)="onGoldPack()" type="submit" class="btn btn-primary pull-right">Add to cart</button>
+          <button (click)="onPackageSelect(2)" type="submit" class="btn btn-primary pull-right">Add to cart</button>
         </div>
 
       </div>
