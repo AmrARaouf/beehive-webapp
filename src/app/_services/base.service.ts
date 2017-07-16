@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Headers, RequestOptions, Http } from '@angular/http';
+import { NotificationService } from '@app/_services/notification.service';
 
 import { environment } from '@env/environment';
 
@@ -14,7 +15,9 @@ export abstract class BaseService {
   
   protected handleError(error: any): Promise<any> {
     console.error('An error occurred', error);
+    // this.notificationService.setErrorMessage(error.error);
     return Promise.reject(error.message || error);
   }
 
+  
 }
