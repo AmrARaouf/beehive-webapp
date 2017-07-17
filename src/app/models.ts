@@ -8,10 +8,12 @@ export interface Project {
   _id?: string;
   name: string;
   description: string;
-  images: string[];
+  images: Image[];
   numberOfAnnotations: number;
   labelNames: string[];
-  package: string;
+  package: Package;
+  imagesPath: string;
+  tutorialPath: string;
 }
 
 export interface BusinessUser {
@@ -28,6 +30,11 @@ export interface BusinessUserCredentials {
   _id?: string;
   email: string;
   password: string;
+}
+
+export interface Annotation {
+  _id?: string;
+  labels: Label[];
 }
 
 export interface Label {
@@ -67,8 +74,9 @@ export interface Rank {
 }
 
 export interface Image {
+  _id?: string;
   path: string;
-  _id: string;
+  annotations: Annotation[];
 }
 
 export interface Activity {
