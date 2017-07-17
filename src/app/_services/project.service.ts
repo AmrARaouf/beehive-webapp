@@ -24,7 +24,10 @@ export class ProjectService extends BaseService {
       labelNames: [],
       numberOfAnnotations: 0,
       images: [],
-      package: ''
+      package: <Package> {
+        name: '',
+        maxStorage: 0
+      }
     }
   }
 
@@ -75,7 +78,7 @@ export class ProjectService extends BaseService {
 
   dispatchProject(): Promise<Project> {
     return this.http
-    .get(`${this.projectsUrl}/dispatch`, this.authOptions)
+    .get(`${this.projectsUrl}/dispatch`, this.options)
     .toPromise()
     .then(res => res.json().project as Project)
   }
