@@ -25,8 +25,6 @@ export class ProjectDetailComponent {
             let projectId = params['id'];
             this.projectService.getProject(projectId).then(project => {
                 this.project = project;
-                // console.log(this.project);
-                // Populate data for charts,
                 this.populateChartsData();
                 this.projectService.getProjectActivities(this.project._id).then(activities => {
                     this.activities = Array(0);
