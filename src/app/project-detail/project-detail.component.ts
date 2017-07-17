@@ -3,7 +3,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { ProjectService } from '@app/_services/project.service';
 
-import { Project, Activity } from '@app/models';
+import { Project, Activity, Annotation } from '@app/models';
 
 @Component({
     selector: 'app-project-detail',
@@ -24,28 +24,58 @@ export class ProjectDetailComponent {
         this.activatedRoute.params.subscribe((params: Params) => {
             let projectId = params['id'];
             this.projectService.getProject(projectId).then(project => {
-                //TODO: Get project from the id,
-                //this.projectService.getProject('5946e90a1f393415a4055395').then(project => {
                 this.project = project;
+                // console.log(this.project);
+                // Populate data for charts,
+                this.populateChartsData();
                 this.projectService.getProjectActivities(this.project._id).then(activities => {
                     this.activities = Array(0);
                     activities.forEach((item, index) => this.activities.push(<ActivityModel> { id:index+1, activity: item}));
-                    console.log(this.activities);
                 });
+            });
+        });
+    }
+
+    populateChartsData() : void {
+        this.labels = this.project.labelNames;
+        this.labelCount = Array(0);
+        this.imageLabels = Array(0);
+        this.imageAnnotationCount = Array(0);
+        var notLabelled = 0;
+        this.project.images.forEach((item, index) => {
+            if (item.annotations.length == 0)
+                notLabelled++;
+            else {
+                this.imageLabels.push('Image ' + (index+1).toString());
+                this.imageAnnotationCount.push(item.annotations.length);
+                this.populateLabelsData(item.annotations);
+            }
+        });
+        this.imageLabels.push('Not Labelled');
+        this.imageAnnotationCount.push(notLabelled);
+    }
+
+    populateLabelsData(annotations : Annotation[]) : void {
+        annotations.forEach((annotation, index) => {
+            if (annotation.labels == null) return;
+            annotation.labels.forEach((item, index) => {
+            var ind = this.labels.findIndex(x => x== item.name);
+                if (ind != -1)
+                    this.labelCount[index] = this.labelCount[index]+1;
             });
         });
     }
 
     onChange(activity) : void {
         this.selectedActivity = this.activities[activity-1];
-        console.log(this.selectedActivity);
     }
 
-  public chartLabels:string[] = ['Image 1', 'Image 2', 'Image 3'];
-  public chartsData:number[] = [3, 4, 1];
-  public ChartType:string = 'doughnut';
+  public imageLabels : string[];
+  public imageAnnotationCount : number[];
+  public labels : string[];
+  public labelCount : number[];
+  public chartType : string = 'doughnut';
  
-  // events
   public chartClicked(e:any):void {
     console.log(e);
   }

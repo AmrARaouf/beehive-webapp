@@ -12,54 +12,62 @@
     </div>
     <form class="section-margin">
         <ul class="nav nav-tabs nav-justified">
-            <li role="presentation" [class.active]="activeTab == 1"><a data-toggle="tab" href="#section-1">Annotators</a></li>
-             <li role="presentation" [class.active]="activeTab == 2"><a data-toggle="tab" href="#section-2">Images</a></li> 
-        </ul>
-
+            <li role="presentation" [class.active]="activeTab == 1"><a data-toggle="tab" href="#section-1">Images</a></li> 
+            <li role="presentation" [class.active]="activeTab == 2"><a data-toggle="tab" href="#section-2">Labels</a></li>  
+            <li role="presentation" [class.active]="activeTab == 3"><a data-toggle="tab" href="#section-3">Annotators</a></li>
+        </ul> 
         <div class="tab-content border">
-            <!-- Annotator tab -->
+            <!-- Images tab -->
             <section id="section-1" class="tab-pane fade" [class.in]="activeTab == 1" [class.active]="activeTab == 1">
+                <div style="display: block; width: 300px; height: 300px; margin: 0 auto"  >
+                    <canvas baseChart [data]="imageAnnotationCount" [labels]="imageLabels" [chartType]="chartType"
+                                (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)" ></canvas>
+                </div>
+            </section>
+            <!-- End: Images tab -->
 
-            <div class="row" class="test">
-                <div>
-                    <label>Select Annotator:  </label>
-                    <select (change)="onChange($event.target.value)" name="annotationIds" >
-                        <option *ngFor="let activity of activities" >{{activity.id}}</option>
-                    </select>
+            <!-- Labels tab -->
+            <section id="section-2" class="tab-pane fade" [class.in]="activeTab == 2" [class.active]="activeTab == 2">
+                <div style="display: block"  >
+                    <canvas baseChart [data]="labelCount" [labels]="labels" [chartType]="chartType"
+                                (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)" ></canvas>
                 </div>
-                <div *ngIf="selectedActivity">
-                    <table>
-                        <tr>
-                            <td> Annotator </td>
-                            <td>{{selectedActivity.id}} </td>
-                        </tr>
-                        <tr>
-                            <td><label>Images annotated</label></td>
-                            <td>{{selectedActivity.activity.annotatedImageCount}} </td>
-                        </tr>
-                        <tr>
-                            <td><label>Last Updated</label></td>
-                            <td>{{selectedActivity.activity.timestamp}} </td>
-                        </tr>
-                        <tr>
-                            <td><label>Annotator Active  </label></td>
-                            <td>{{selectedActivity.activity.workerUser.isActivated}} </td>
-                        </tr>
-                    </table>
+            </section>
+            <!-- End: Labels tab -->
+
+            <!-- Annotator tab -->
+            <section id="section-3" class="tab-pane fade" [class.in]="activeTab == 3" [class.active]="activeTab == 3">
+                <div class="row" class="test">
+                    <div>
+                        <label>Select Annotator:  </label>
+                        <select (change)="onChange($event.target.value)" name="annotationIds" >
+                            <option *ngFor="let activity of activities" >{{activity.id}}</option>
+                        </select>
+                    </div>
+                    <div *ngIf="selectedActivity">
+                        <table>
+                            <tr>
+                                <td> Annotator </td>
+                                <td>{{selectedActivity.id}} </td>
+                            </tr>
+                            <tr>
+                                <td><label>Images annotated</label></td>
+                                <td>{{selectedActivity.activity.annotatedImageCount}} </td>
+                            </tr>
+                            <tr>
+                                <td><label>Last Updated</label></td>
+                                <td>{{selectedActivity.activity.timestamp}} </td>
+                            </tr>
+                            <tr>
+                                <td><label>Annotator Active  </label></td>
+                                <td>{{selectedActivity.activity.workerUser.isActivated}} </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-            </div>
             </section>
             <!-- End: Annotator tab -->
-
-            <!-- Package tab -->
-            <section id="section-2" class="tab-pane fade" [class.in]="activeTab == 2" [class.active]="activeTab == 2">
-            <div style="display: block">
-                <canvas baseChart [data]="chartsData" [labels]="chartLabels" [chartType]="chartType"
-                            (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
-                </div>
-            </section>
-            <!-- End: Package tab -->
-            </div>
+        </div>
         </form>
         </div>
 <h3 *ngIf="project && project.name == ''" class="container alert alert-warning box-msg" role="alert">
