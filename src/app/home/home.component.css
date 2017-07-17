@@ -1,0 +1,17 @@
+nav#mainNav {
+  background-color: white !important;
+}
+
+.navbar-default .nav > li > a,
+.navbar-default .nav > li > a:hover {
+  color: black;
+}
+
+section#contact a.btn-link,
+aside a.btn-link {
+  color: white;
+}
+
+section#contact {
+  padding: 50px 0;
+}
