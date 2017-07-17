@@ -15,11 +15,11 @@
             <li role="presentation" [class.active]="activeTab == 1"><a data-toggle="tab" href="#section-1">Images</a></li> 
             <!-- <li role="presentation" [class.active]="activeTab == 2"><a data-toggle="tab" href="#section-2">Labels</a></li>  -->
             <li role="presentation" [class.active]="activeTab == 3"><a data-toggle="tab" href="#section-3">Annotators</a></li>
-        </ul>
+        </ul> 
         <div class="tab-content border">
             <!-- Images tab -->
             <section id="section-1" class="tab-pane fade" [class.in]="activeTab == 1" [class.active]="activeTab == 1">
-                <div style="display: block"  >
+                <div style="display: block; width: 300px; height: 300px; margin: 0 auto"  >
                     <canvas baseChart [data]="imageAnnotationCount" [labels]="imageLabels" [chartType]="chartType"
                                 (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)" ></canvas>
                 </div>
