@@ -1,8 +1,8 @@
 <app-navbar></app-navbar>
 <div class="container text-center">
-  <div class="annotorious-widget">
+  <div class="annotorious-widget" *ngIf="project && project.images.length > 0">
     <app-annotorious
-      [img]="images[currentImageIndex]"
+      [img]="project.images[imageIndex].path"
       (tag)="onNewLabel($event)">
     </app-annotorious>
     <div class="tab-buttons section-margin">

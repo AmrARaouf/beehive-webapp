@@ -4,7 +4,7 @@ import { Label } from '@app/models'
 
 @Component({
   selector: 'app-annotorious',
-  template: `<img [src]="image" width="720px" class="annotatable"/>`,
+  template: `<img [src]="image" width="720px" height="540px" class="annotatable"/>`,
   styles: []
 })
 export class AnnotoriousComponent implements OnInit, OnChanges {
@@ -14,6 +14,7 @@ export class AnnotoriousComponent implements OnInit, OnChanges {
   constructor(private windowRef: WindowRefService) { }
 
   ngOnInit() {
+    this.windowRef.nativeWindow.anno.reset();
     this.setUpListener()
   }
 
@@ -25,18 +26,16 @@ export class AnnotoriousComponent implements OnInit, OnChanges {
   }
 
   setUpListener(): void {
-    var self = this
-    document.addEventListener("DOMContentLoaded", function() {
-      self.windowRef.nativeWindow.anno.addHandler('onAnnotationCreated', function(annotation) {
-        var newLabel = <Label> {
-          name: annotation.text,
-          x: annotation.shapes[0].geometry.x,
-          y: annotation.shapes[0].geometry.y,
-          width: annotation.shapes[0].geometry.width,
-          height: annotation.shapes[0].geometry.height
-        }
-        self.labelEmitter.emit(newLabel);
-      });
+    var self = this;
+    this.windowRef.nativeWindow.anno.addHandler('onAnnotationCreated', function(annotation) {
+      var newLabel = <Label> {
+        name: annotation.text,
+        x: annotation.shapes[0].geometry.x,
+        y: annotation.shapes[0].geometry.y,
+        width: annotation.shapes[0].geometry.width,
+        height: annotation.shapes[0].geometry.height
+      }
+      self.labelEmitter.emit(newLabel);
     });
   }
 
