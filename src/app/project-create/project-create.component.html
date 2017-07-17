@@ -34,17 +34,17 @@
             <i class="fa fa-info-circle" aria-hidden="true"></i>
             <span>Info</span>
           </h4>
-          Please write project name and brief description for the project.
+          Enter your project name and a brief description.
         </div>
       </div>
     </section>
     <!-- End: Details tab -->
 
     <!-- Package tab -->
-    <section id="section-2" class="tab-pane fade" [class.in]="activeTab == 2" [class.active]="activeTab == 2">
+    <section id="section-2"  class="tab-pane fade" [class.in]="activeTab == 2" [class.active]="activeTab == 2">
       <div id="pricing">
 
-        <div class="price_card alpha">
+        <div class="price_card alpha" style="cursor: pointer;" (click)="onPackageSelect(0)" type="submit">
           <div class="header">
             <span class="price">$500</span>
             <span class="name">Bronze Pack</span>
@@ -52,10 +52,9 @@
           <ul class="features">
             <li>Up to 10GB of data</li>
           </ul>
-          <button (click)="onPackageSelect(0)" type="submit" class="btn btn-primary pull-right">Add to cart</button>
         </div>
 
-        <div class="price_card bravo">
+        <div class="price_card bravo" style="cursor: pointer;" (click)="onPackageSelect(1)" type="submit">
           <div class="header">
             <span class="price">$1000</span>
             <span class="name">Silver Pack</span>
@@ -63,10 +62,9 @@
           <ul class="features">
             <li>Up to 50GB of data</li>
           </ul>
-          <button (click)="onPackageSelect(1)" type="submit" class="btn btn-primary pull-right" >Add to cart</button>
         </div>
 
-        <div class="price_card charlie">
+        <div class="price_card charlie" style="cursor: pointer;" (click)="onPackageSelect(2)" type="submit">
           <div class="header">
             <span class="price">$2000</span>
             <span class="name">Gold Pack</span>
@@ -74,7 +72,6 @@
           <ul class="features">
             <li>Up to 100GB of data</li>
           </ul>
-          <button (click)="onPackageSelect(2)" type="submit" class="btn btn-primary pull-right">Add to cart</button>
         </div>
 
       </div>
@@ -99,7 +96,8 @@
             <i class="fa fa-info-circle" aria-hidden="true"></i>
             <span>Info</span>
           </h4>
-          Please upload dataset for the project. Note that images should be compressed in one single zip file.
+          Upload your dataset here.<br>
+          Note that images should be compressed into a single zip file.
         </div>
       </div>
     </section>
@@ -118,7 +116,7 @@
           </div>
           <div class="form-group">
             <select (change)="onChange($event.target.value)" name="annotationIds" class="form-control">
-              <option hidden>Number of Annotators</option>
+              <option hidden>Minimum number of Annotators</option>
               <option *ngFor="let annotator of annotators" >{{annotator}}</option>
             </select>
           </div>
@@ -129,8 +127,8 @@
             <i class="fa fa-info-circle" aria-hidden="true"></i>
             <span>Info</span>
           </h4>
-          Add required Labels for annotation.
-          Enter the number of annotators per image in the dataset.
+          Add the labels that will be used for the annotation.<br><br>
+          Enter the number of annotators per image in the dataset. Note that the higher the number, the longer time it will take.
         </div>
       </div>
     </section>
@@ -154,7 +152,8 @@
             <i class="fa fa-info-circle" aria-hidden="true"></i>
             <span>Info</span>
           </h4>
-          Please upload tutorial document for the project. It should demonstrate how pictures should be annotated.
+          Please upload tutorial document for the project.<br>
+          It should show how you would like the images to be annotated.
         </div>
       </div>
     </section>
