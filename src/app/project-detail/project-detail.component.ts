@@ -39,6 +39,10 @@ export class ProjectDetailComponent {
     populateChartsData() : void {
         this.labels = this.project.labelNames;
         this.labelCount = Array(0);
+        for (var label in this.labels)
+            this.labelCount.push(1);
+        this.labelCount.forEach((item, index) => this.labelCount[index] = 1);
+        console.log(this.labelCount);
         this.imageLabels = Array(0);
         this.imageAnnotationCount = Array(0);
         var notLabelled = 0;
