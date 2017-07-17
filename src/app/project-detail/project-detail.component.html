@@ -28,7 +28,7 @@
 
             <!-- Labels tab -->
             <section id="section-2" class="tab-pane fade" [class.in]="activeTab == 2" [class.active]="activeTab == 2">
-                <div style="display: block"  >
+                <div style="display: block; width: 300px; height: 300px; margin: 0 auto"  >
                     <canvas baseChart [data]="labelCount" [labels]="labels" [chartType]="chartType"
                                 (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)" ></canvas>
                 </div>
