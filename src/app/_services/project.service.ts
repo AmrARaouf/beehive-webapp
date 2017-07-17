@@ -80,6 +80,6 @@ export class ProjectService extends BaseService {
     return this.http
     .get(`${this.projectsUrl}/dispatch`, this.options)
     .toPromise()
-    .then(res => res.json().project as Project)
+    .then(res => res.json() as Project)
   }
 }
