@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TagInputModule } from 'ng2-tag-input';
 import { NgUploaderModule } from 'ngx-uploader';
+import { ChartsModule } from 'ng2-charts';
 
 import { ROUTES } from '@app/routes'
 
@@ -57,7 +58,8 @@ import { AnnotoriousComponent } from '@app/worker-tag/annotorious.component';
     HttpModule,
     TagInputModule,
     BrowserAnimationsModule,
-    NgUploaderModule
+    NgUploaderModule,
+    ChartsModule
   ],
   providers: [
     WorkerService,
