@@ -1,13 +1,13 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { WindowRefService } from '@app/_services/window-ref.service';
 import { Label } from '@app/models'
 
 @Component({
   selector: 'app-annotorious',
-  template: `<img [src]="image" class="annotatable" />`,
+  template: `<img [src]="image" width="720px" class="annotatable"/>`,
   styles: []
 })
-export class AnnotoriousComponent implements OnInit {
+export class AnnotoriousComponent implements OnInit, OnChanges {
   @Input("img") image: string;
   @Output("tag") labelEmitter: EventEmitter<Label> = new EventEmitter<Label>();
 
@@ -15,6 +15,13 @@ export class AnnotoriousComponent implements OnInit {
 
   ngOnInit() {
     this.setUpListener()
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    var hasImageChanged = changes.image;
+    if (hasImageChanged) {
+      this.removeAll();
+    }
   }
 
   setUpListener(): void {
@@ -31,6 +38,10 @@ export class AnnotoriousComponent implements OnInit {
         self.labelEmitter.emit(newLabel);
       });
     });
+  }
+
+  removeAll(): void {
+    this.windowRef.nativeWindow.anno.removeAll();
   }
 
 }
