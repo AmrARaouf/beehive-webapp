@@ -1,0 +1,13 @@
+.container {
+  text-align: center;
+}
+
+.annotorious-widget {
+  width: 720px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.tab-buttons button {
+  margin-left: 8px;
+}
