@@ -10,11 +10,11 @@ export abstract class UserService extends BaseService {
     super(http);
   }
 
-  protected storeUserObject(user: Object): void {
-    localStorage.setItem("beehive_user", JSON.stringify(user));
+  protected storeUserObject(key: string, user: Object): void {
+    localStorage.setItem(key, JSON.stringify(user));
   }
 
-  protected loadUserObject(): Object {
-    return JSON.parse(localStorage.getItem("beehive_user"));
+  protected loadUserObject(key: string): Object {
+    return JSON.parse(localStorage.getItem(key));
   }
 }
