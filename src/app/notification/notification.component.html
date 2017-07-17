@@ -1,0 +1,14 @@
+<div *ngIf="error">
+  <div class="container alert alert-success box-msg" role="alert">
+    <h5>{{error}}</h5>
+  </div>
+</div>
+<div *ngIf="success">
+  <div class="container alert alert-warning box-msg" role="alert">
+    <h3>{{success}}</h3>
+  </div>
+</div>
+<div *ngIf="!error && !success">
+  <div class="container">
+  </div>
+</div>
