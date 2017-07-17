@@ -8,7 +8,7 @@ import { Project, Activity } from '@app/models';
 @Component({
     selector: 'app-project-detail',
     templateUrl: './project-detail.component.html',
-    styleUrls: ['./project-detail.component.css']
+    styles: []
 })
 export class ProjectDetailComponent {
     project: Project;
@@ -40,6 +40,19 @@ export class ProjectDetailComponent {
         this.selectedActivity = this.activities[activity-1];
         console.log(this.selectedActivity);
     }
+
+  public chartLabels:string[] = ['Image 1', 'Image 2', 'Image 3'];
+  public chartsData:number[] = [3, 4, 1];
+  public ChartType:string = 'doughnut';
+ 
+  // events
+  public chartClicked(e:any):void {
+    console.log(e);
+  }
+ 
+  public chartHovered(e:any):void {
+    console.log(e);
+  }
 }
 
 export class ActivityModel
