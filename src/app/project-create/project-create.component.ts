@@ -18,7 +18,7 @@ export class ProjectCreateComponent implements OnInit {
     private packageService: PackageService,
     private router: Router) { }
 
-  private numberOfTabs = 6;
+  private numberOfTabs = 5;
   private createText = 'Create';
   private nextText = 'Next';
   activeTab: number = 1;
@@ -41,7 +41,7 @@ export class ProjectCreateComponent implements OnInit {
       this.packages = packages
     });
   }
-
+  
   onSelect(): void {
     console.log(this.items);
   }

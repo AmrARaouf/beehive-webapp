@@ -26,6 +26,8 @@ import { ProjectsComponent } from '@app/projects/projects.component';
 import { ProjectDetailComponent } from '@app/project-detail/project-detail.component';
 import { BusinessSignUpComponent } from '@app/business-signup/business-signup.component';
 import { BusinessLoginComponent } from '@app/business-login/business-login.component'
+
+import { NotificationService } from '@app/_services/notification.service';
 import { NavbarComponent } from '@app/navbar/navbar.component';
 import { WorkerHomeComponent } from '@app/worker-home/worker-home.component';
 import { WorkerTutorialComponent } from '@app/worker-tutorial/worker-tutorial.component';

@@ -13,9 +13,10 @@
     <form class="section-margin">
         <ul class="nav nav-tabs nav-justified">
             <li role="presentation" [class.active]="activeTab == 1"><a data-toggle="tab" href="#section-1">Annotators</a></li>
-            <li role="presentation" [class.active]="activeTab == 2"><a data-toggle="tab" href="#section-2">Images</a></li>
+            <!-- <li role="presentation" [class.active]="activeTab == 2"><a data-toggle="tab" href="#section-2">Images</a></li> -->
         </ul>
 
+    
         <div class="tab-content border">
             <!-- Annotator tab -->
             <section id="section-1" class="tab-pane fade" [class.in]="activeTab == 1" [class.active]="activeTab == 1">
@@ -34,7 +35,7 @@
                             <td>{{selectedActivity.id}} </td>
                         </tr>
                         <tr>
-                            <td><label>Images annotaed</label></td>
+                            <td><label>Images annotated</label></td>
                             <td>{{selectedActivity.activity.annotatedImageCount}} </td>
                         </tr>
                         <tr>
@@ -42,7 +43,7 @@
                             <td>{{selectedActivity.activity.timestamp}} </td>
                         </tr>
                         <tr>
-                            <td><label>Annotator Active:  </label></td>
+                            <td><label>Annotator Active  </label></td>
                             <td>{{selectedActivity.activity.workerUser.isActivated}} </td>
                         </tr>
                     </table>
