@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TagInputModule } from 'ng2-tag-input';
 import { NgUploaderModule } from 'ngx-uploader';
+import { ChartsModule } from 'ng2-charts';
 
 import { ROUTES } from '@app/routes'
 
@@ -27,7 +28,6 @@ import { ProjectDetailComponent } from '@app/project-detail/project-detail.compo
 import { BusinessSignUpComponent } from '@app/business-signup/business-signup.component';
 import { BusinessLoginComponent } from '@app/business-login/business-login.component'
 
-import { NotificationService } from '@app/_services/notification.service';
 import { NavbarComponent } from '@app/navbar/navbar.component';
 import { WorkerHomeComponent } from '@app/worker-home/worker-home.component';
 import { WorkerTutorialComponent } from '@app/worker-tutorial/worker-tutorial.component';
@@ -58,7 +58,8 @@ import { AnnotoriousComponent } from '@app/worker-tag/annotorious.component';
     HttpModule,
     TagInputModule,
     BrowserAnimationsModule,
-    NgUploaderModule
+    NgUploaderModule,
+    ChartsModule
   ],
   providers: [
     WorkerService,
