@@ -5,7 +5,7 @@
         Description: {{project.description}}
     </div>
     <div>
-        Labels: <span *ngFor="let label of project.label_names; let isLast=last">{{label}}{{isLast ? '' : ', '}}</span>
+        Labels: <span *ngFor="let label of project.labelNames; let isLast=last">{{label}}{{isLast ? '' : ', '}}</span>
     </div>
     <div>
         Package: {{project.package.name}}
