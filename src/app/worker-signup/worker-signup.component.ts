@@ -10,7 +10,6 @@ import { WorkerUser, Rank } from '@app/models';
   styles: []
 })
 export class WorkerSignupComponent {
-  // TODO: Get this from database,
   newRank: Rank = {
     title: 'Beginner',
     maxPoints: 10,
@@ -34,7 +33,6 @@ export class WorkerSignupComponent {
               private router: Router) { }
 
   signup(): void {
-    console.log("here")
     this.workerService.signup(this.user).then(user  => {
       this.router.navigate(['/worker']);
     });
