@@ -14,8 +14,7 @@ export abstract class BaseService {
   
   protected handleError(error: any): Promise<any> {
     // console.error('An error occurred', error);
-    throw new Error(error);
-    // return Promise.reject(error.message || error);
+    return Promise.reject(error.message || error);
   }
 
   

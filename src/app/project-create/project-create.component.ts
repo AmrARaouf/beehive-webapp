@@ -31,7 +31,7 @@ export class ProjectCreateComponent implements OnInit {
   // TODO: update html to get packages from this,
   packages: Package[];
   
-  items: string[] = ['Person','Car'];
+  items: string[] = [];
 
   ngOnInit(): void {
     console.log(this.annotators);
@@ -68,7 +68,9 @@ export class ProjectCreateComponent implements OnInit {
       console.log(this.project);
       this.project.labelNames = this.items;
       this.projectService.createProject(this.project)
-      .then(res => this.router.navigate(['projects']))
+      .then(res => {
+        console.log(res)
+        this.router.navigate(['/projects', res._id])})
     }
   }
 
