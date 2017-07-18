@@ -15,8 +15,7 @@ export class BusinessSignUpComponent {
     organization: '',
     email: '',
     phone: '',
-    password: '',
-    message: ''
+    password: ''
   };
 
   formSubmitted = false;
