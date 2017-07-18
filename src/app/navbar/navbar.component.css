@@ -7,9 +7,24 @@
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
+#navbar.worker {
+  background: white; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(white, #f9f9f9); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(white, #f9f9f9); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(white, #f9f9f9); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white, #f9f9f9); /* Standard syntax (must be last) */
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  border-bottom: solid 1px #d9d9d9;
+}
+
 a,
 a:hover {
   color: white;
+}
+
+#navbar.worker a,
+#navbar.worker a:hover {
+  color: #ffc300;
 }
 
 a.navbar-brand {

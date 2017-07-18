@@ -10,6 +10,7 @@ import { UserService } from '@app/_services/user.service'
 @Injectable()
 export class WorkerService extends UserService {
   private worker: WorkerUser;
+  private storageKey = "beehive_worker_user";
 
   constructor(private http: Http) {
     super(http);
@@ -17,10 +18,9 @@ export class WorkerService extends UserService {
   }
 
   signup(workerUser: WorkerUser): Promise<WorkerUser> {
-    console.log("worker service")
     return this.http.post(`${this.baseUrl}/worker/signup`, JSON.stringify(workerUser), this.authOptions)
       .toPromise()
-      .then(response => this.handleUserAuthentication(response.json().user as WorkerUser))
+      .then(response => this.handleUserAuthentication(response.json().workerUser as WorkerUser))
       .catch(this.handleError);
   }
 
@@ -36,15 +36,15 @@ export class WorkerService extends UserService {
   }
 
   private loadWorkerUser(): void {
-    var workerObject = this.loadUserObject()
+    var workerObject = this.loadUserObject(this.storageKey);
     if (workerObject) {
       this.worker = <WorkerUser>workerObject;
     }
   }
 
   private handleUserAuthentication(worker: WorkerUser): WorkerUser {
-    this.worker = worker
-    this.storeUserObject(worker)
-    return this.worker
+    this.worker = worker;
+    this.storeUserObject(this.storageKey, worker);
+    return this.worker;
   }
 }
