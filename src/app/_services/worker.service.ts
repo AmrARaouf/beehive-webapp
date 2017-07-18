@@ -18,7 +18,6 @@ export class WorkerService extends UserService {
   }
 
   signup(workerUser: WorkerUser): Promise<WorkerUser> {
-    console.log("worker service")
     return this.http.post(`${this.baseUrl}/worker/signup`, JSON.stringify(workerUser), this.authOptions)
       .toPromise()
       .then(response => this.handleUserAuthentication(response.json().user as WorkerUser))

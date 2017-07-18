@@ -11,7 +11,9 @@ export abstract class UserService extends BaseService {
   }
 
   protected storeUserObject(key: string, user: Object): void {
-    localStorage.setItem(key, JSON.stringify(user));
+    if (user) {
+      localStorage.setItem(key, JSON.stringify(user));
+    }
   }
 
   protected loadUserObject(key: string): Object {
