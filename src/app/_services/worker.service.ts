@@ -20,7 +20,7 @@ export class WorkerService extends UserService {
   signup(workerUser: WorkerUser): Promise<WorkerUser> {
     return this.http.post(`${this.baseUrl}/worker/signup`, JSON.stringify(workerUser), this.authOptions)
       .toPromise()
-      .then(response => this.handleUserAuthentication(response.json().user as WorkerUser))
+      .then(response => this.handleUserAuthentication(response.json().workerUser as WorkerUser))
       .catch(this.handleError);
   }
 
