@@ -23,7 +23,6 @@ export interface BusinessUser {
   email: string;
   phone: string;
   password: string;
-  message: string;
 }
 
 export interface BusinessUserCredentials {
