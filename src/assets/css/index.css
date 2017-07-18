@@ -59,8 +59,24 @@ section {
 aside {
   padding: 50px 0;
 }
+.panel-green{
+  background: rgba(255, 195, 0,0.9);
+
+}
 .no-padding {
   padding: 0;
+}
+.huge{
+  font-size: 50px;
+  font-family: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
+}
+.big-icon {
+    font-size: 200px;
+}
+.big {
+    font-size: 35px;
+    text-align: center;
+  font-family: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
 }
 .navbar-default {
   background-color: white;
@@ -349,6 +365,12 @@ fieldset[disabled] .btn-default.active {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
+}
+
+.btn-start{
+  font-size: 20px;
+  padding: 44px 200px;
+  margin-top: 80px;
 }
 #contact{
   background-color:rgb(255, 195, 0);

@@ -1,4 +1,201 @@
 <app-navbar [userType]="'worker'"></app-navbar>
-<div class="container text-center">
-  <button [routerLink]="['/worker/tag']" class="btn btn-primary btn-large">Start</button>
-</div>
+
+        <div class="row">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa  fa-user text-primary sr-icons big-icon"></i>
+                    <h2>{{workerUser.username}}</h2>
+                </div>
+            </div>
+
+            <div class="col-lg-9 col-md-6 text-center">
+                
+				
+				  <button [routerLink]="['/worker/tag']" class="btn btn-primary btn-start">Start Annotation</button>
+				
+
+            </div>  
+        </div>  
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Dashboard</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-tags fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{workerUser.totalAnnotationsCount}}</div>
+                           
+                                </div>
+                            </div>
+                        </div>
+                            <div class="panel-footer">
+                                 <div class="big">Annotations</div>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-certificate fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{workerUser.points}}</div>
+                           
+                                </div>
+                            </div>
+                        </div>
+                            <div class="panel-footer">
+                                 <div class="big">Points</div>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-eur fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{workerUser.currentPayableCredit}}</div>
+                           
+                                </div>
+                            </div>
+                        </div>
+                            <div class="panel-footer">
+                                 <div class="big">Euros</div>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <img src="assets/images/Badge_1_Bronze.png"  height="90" width="100">
+                            <div class="panel-footer">
+                                 <div class="big">Rank</div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+    <div class="container" style="padding-top: 80px">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">The Ranks</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row no-gutter popup-gallery">
+            <div class="col-lg-3 col-sm-6">
+                <a class="portfolio-box">
+                    <img src="assets/images/Badge_1_Bronze.png" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+
+                            <div class="project-name">
+                                Bronze
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <a  class="portfolio-box">
+                    <img src="assets/images/Badge_2_Silver.png" class="img-responsive" alt="" >
+                    <div class="portfolio-box-caption"> 
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-name">
+                                Silver
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <a  class="portfolio-box">
+                    <img src="assets/images/Badge_3_Gold.png" class="img-responsive" alt="" >
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-name">
+                                Gold
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-sm-6">
+                <a  class="portfolio-box">
+                    <img src="assets/images/Badge_4_Platinum.png" class="img-responsive" alt="" >
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-name">
+                                Platinum
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>            
+            
+        </div>
+        <div class="container-fluid">
+        <div class="row no-gutter popup-gallery">
+            <div class="col-lg-3 col-sm-6">
+                <a class="portfolio-box">
+                    <img src="assets/images/Badge_5_Diamond.png" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+
+                            <div class="project-name">
+                                Diamond
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <a  class="portfolio-box">
+                    <img src="assets/images/Badge_6_Master.png" class="img-responsive" alt="" >
+                    <div class="portfolio-box-caption"> 
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-name">
+                                Master
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <a  class="portfolio-box">
+                    <img src="assets/images/Badge_7_Grandmaster.png" class="img-responsive" alt="" >
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-name">
+                                GrandMaster
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            
+            
+        </div>
+    </div>
