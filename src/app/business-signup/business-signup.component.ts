@@ -9,7 +9,7 @@ import { BusinessService } from '@app/_services/business.service';
   styles: []
 })
 
-export class BusinessSignUpComponent {
+export class BusinessSignUpComponent implements OnInit {
   user: BusinessUser = {
     fullName: '',
     organization: '',
@@ -18,15 +18,17 @@ export class BusinessSignUpComponent {
     password: ''
   };
 
-  formSubmitted = false;
+  private userCreated: boolean;
 
   constructor(private businessService: BusinessService) { }
 
+  ngOnInit() {
+    this.userCreated = false;
+  }
+
   signup(): void {
     this.businessService.signup(this.user).then(user => {
-      if(user) {
-        this.formSubmitted = true
-      }
+      this.userCreated = true
     });
   }
 }

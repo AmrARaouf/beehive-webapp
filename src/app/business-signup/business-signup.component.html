@@ -1,5 +1,10 @@
 <app-navbar></app-navbar>
-<div *ngIf="!formSubmitted" class="container">
+
+<div *ngIf="userCreated" class="container alert alert-success box-msg" role="alert">
+  <h3>Welcome to Beehive! Login now and start creating projects.</h3>
+</div>
+
+<div class="container">
   <div class="col-sm-6 col-sm-offset-3">
     <h1 class="text-center">Sign up</h1>
     <form ngNativeValidate>
@@ -32,11 +37,4 @@
 
     </form>
   </div>
-</div>
-
-<div *ngIf="formSubmitted">
-  <div class="container alert alert-success box-msg" role="alert">
-    <h3>Welcome to Beehive! Login now and start creating projects.</h3>
-  </div>
-  <app-business-login></app-business-login>
 </div>
