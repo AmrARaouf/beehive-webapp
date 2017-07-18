@@ -25,14 +25,11 @@ export class WorkerTagComponent implements OnInit {
     this.projectService.dispatchProject().then( project => {
       this.project = project;
       this.imageIndex = 0;
-      console.log(this.project);
     });
   }
 
   onNewLabel(label: Label): void {
     this.labels.push(label);
-    console.log(this.labels);
-    // console.log("new label in WorkerTagComponent: ", label)
   }
 
   onNextClick(): void {
@@ -42,7 +39,6 @@ export class WorkerTagComponent implements OnInit {
       labels: this.labels
     };
     this.labels = [];
-    console.log(workerId, imageId, annotation);
     this.annotationService.createAnnotation(workerId, imageId, annotation);
     this.imageIndex = (this.imageIndex + 1) % this.project.images.length;
   }
