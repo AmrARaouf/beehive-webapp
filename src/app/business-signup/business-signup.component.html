@@ -1,6 +1,6 @@
 <div *ngIf="!formSubmitted" class="container">
     <h1>Sign up</h1>
-    <form>
+    <form ngNativeValidate>
       <div class="form-group">
         <label for="fullName">Full Name</label>
         <input type="text" class="form-control" name="fullName" id="fullName" [(ngModel)]="user.fullName" required>
