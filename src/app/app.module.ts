@@ -17,6 +17,7 @@ import { ProjectService } from '@app/_services/project.service';
 import { WindowRefService } from '@app/_services/window-ref.service';
 import { PackageService } from '@app/_services/package.service';
 import { AnnotationService } from '@app/_services/annotation.service'
+import { RankService } from '@app/_services/rank.service'
 
 import { AppComponent } from '@app/app.component';
 import { HomeComponent } from '@app/home/home.component';
@@ -67,7 +68,8 @@ import { AnnotoriousComponent } from '@app/worker-tag/annotorious.component';
     ProjectService,
     WindowRefService,
     PackageService,
-    AnnotationService
+    AnnotationService,
+    RankService
   ],
   bootstrap: [AppComponent]
 })

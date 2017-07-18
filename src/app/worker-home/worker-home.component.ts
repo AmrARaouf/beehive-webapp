@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
 import { WorkerService } from '@app/_services/worker.service'
-import { WorkerUser } from '@app/models'
+import { WorkerUser, Rank } from '@app/models'
+import { RankService } from '@app/_services/rank.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-worker-home',
@@ -10,11 +11,18 @@ import { WorkerUser } from '@app/models'
 })
 export class WorkerHomeComponent implements OnInit {
 
-  constructor(private workerService: WorkerService) { }
+  private workerUser: WorkerUser;
+  private ranks: Rank[];
+
+  constructor(private workerService: WorkerService,
+  	private rankService: RankService) { }
 
   ngOnInit() {
-    var currUser: WorkerUser = this.workerService.getCurrentUser()
-    console.log("current user: ", currUser)
+    this.workerUser = this.workerService.getCurrentUser();
+    this.rankService.getRanks().then(ranks => this.ranks = ranks);
+    console.log(this.workerUser);
+    console.log(this.ranks);
   }
+
 
 }

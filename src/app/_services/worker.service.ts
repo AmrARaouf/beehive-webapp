@@ -13,7 +13,7 @@ export class WorkerService extends UserService {
 
   constructor(private http: Http) {
     super(http);
-    this.loadBusinessUser()
+    this.loadWorkerUser()
   }
 
   signup(workerUser: WorkerUser): Promise<WorkerUser> {
@@ -35,7 +35,7 @@ export class WorkerService extends UserService {
     return this.worker;
   }
 
-  private loadBusinessUser(): void {
+  private loadWorkerUser(): void {
     var workerObject = this.loadUserObject()
     if (workerObject) {
       this.worker = <WorkerUser>workerObject;
