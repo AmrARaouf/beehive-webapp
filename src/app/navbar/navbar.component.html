@@ -1,5 +1,5 @@
-<div id="navbar" class="container-fluid navbar navbar-static-top" style="background-color: red">
+<div id="navbar" class="container-fluid navbar navbar-static-top" [class.worker]="userType === 'worker'">
   <div class="navbar-header">
-    <a class="navbar-brand" [routerLink]="['/']">Beehive <span class="light">for businesses</span></a>
+    <a class="navbar-brand" [routerLink]="['/']">Beehive <span *ngIf="userType == 'business'" class="light">for businesses</span></a>
   </div>
 </div>

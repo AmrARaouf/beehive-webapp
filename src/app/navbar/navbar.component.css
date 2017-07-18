@@ -7,9 +7,19 @@
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
+#navbar.worker {
+  background: white;
+  border-bottom: solid 1px #bbb;
+}
+
 a,
 a:hover {
   color: white;
+}
+
+#navbar.worker a,
+#navbar.worker a:hover {
+  color: #ffc300;
 }
 
 a.navbar-brand {
