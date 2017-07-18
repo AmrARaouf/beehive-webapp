@@ -10,6 +10,7 @@ import { UserService } from '@app/_services/user.service'
 @Injectable()
 export class BusinessService extends UserService {
   private business: BusinessUser;
+  private storageKey = "beehive_business_user";
 
   constructor(private http: Http) {
     super(http)
@@ -35,15 +36,15 @@ export class BusinessService extends UserService {
   }
 
   private loadBusinessUser(): void {
-    var businessObject = this.loadUserObject()
+    var businessObject = this.loadUserObject(this.storageKey);
     if (businessObject) {
       this.business = <BusinessUser>businessObject;
     }
   }
 
   private handleUserAuthentication(business: BusinessUser): BusinessUser {
-    this.business = business
-    this.storeUserObject(business)
-    return this.business
+    this.business = business;
+    this.storeUserObject(this.storageKey, business);
+    return this.business;
   }
 }

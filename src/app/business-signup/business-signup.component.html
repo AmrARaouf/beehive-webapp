@@ -1,6 +1,8 @@
+<app-navbar></app-navbar>
 <div *ngIf="!formSubmitted" class="container">
-    <h1>Sign up</h1>
-    <form ngNativeValidate>
+  <div class="col-sm-6 col-sm-offset-3">
+    <h1 class="text-center">Sign up</h1>
+    <form>
       <div class="form-group">
         <label for="fullName">Full Name</label>
         <input type="text" class="form-control" name="fullName" id="fullName" [(ngModel)]="user.fullName" required>
@@ -25,16 +27,18 @@
         <label for="phone">Phone</label>
         <input type="text" class="form-control" name="phone" id="phone" [(ngModel)]="user.phone"required>
       </div>
- 
+      
       <div class="form-group">
         <label for="message">Message</label>
         <input type="text" class="form-control" name="message" id="message" [(ngModel)]="user.message" required>
       </div>
- 
+
       <button type="submit" class="btn btn-success" (click)="signup()">Submit</button>
- 
+
     </form>
+  </div>
 </div>
+
 <div *ngIf="formSubmitted">
   <div class="container alert alert-success box-msg" role="alert">
     <h3>Welcome to Beehive! Login now and start creating projects.</h3>

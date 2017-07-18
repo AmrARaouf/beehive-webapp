@@ -9,23 +9,22 @@ import { BaseService } from './base.service';
 
 @Injectable()
 export class AnnotationService extends BaseService {
-  private annotationsUrl = this.baseUrl + '/annotations';
+  private annotationsUrl = this.baseUrl + '/annotation';
 
   constructor(private http: Http) {
     super(http);
   }
 
-  createAnnotation(workerId: string, imageId: string, annotation: Annotation) {
+  createAnnotation(workerId: string, imageId: string, annotation: Annotation): Promise<Annotation> {
     var payload = {
       workerId: workerId,
       imageId: imageId,
       annotation: annotation
     }
-
     return this.http
       .post(this.annotationsUrl, JSON.stringify(payload), this.authOptions)
       .toPromise()
-      .then( res => console.log("create annotation service successful: ", res) )
+      .then( res => res.json() as Annotation )
       .catch(this.handleError);
   }
 

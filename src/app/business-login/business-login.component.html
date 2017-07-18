@@ -1,5 +1,7 @@
+<app-navbar></app-navbar>
 <div class="container">
-    <h1>Log In</h1>
+  <div class="col-sm-6 col-sm-offset-3">
+    <h1 class="text-center">Log In</h1>
     <form ngNativeValidate>
       <div class="form-group">
         <label for="email">Email</label>
@@ -10,7 +12,8 @@
         <label for="password">Password</label>
         <input type="password" class="form-control" name="password" id="password" [(ngModel)]="userCredentials.password" required/>
       </div>
- 
+      
       <button type="submit" class="btn btn-success" (click)="login()">Log In</button>
     </form>
+  </div>
 </div>
